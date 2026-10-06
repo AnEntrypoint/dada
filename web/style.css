@@ -9,3 +9,5 @@
 @media(min-width:801px){.hero h1{font-size:clamp(64px,6.65vw,120px)}}
 
 .progress-list li.current{color:#b83220}
+
+@media(max-width:800px){nav .nav-studio{display:none}}
