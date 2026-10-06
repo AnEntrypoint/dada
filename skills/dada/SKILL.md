@@ -1,6 +1,6 @@
 ---
 name: dada
-description: "DADA (Directed Ambition Design Agent). Create or direct graphic design at maximum artistic ambition through an expanding anchor graph and independent critic panel. Use for identity, posters, books, editorial, motion, typography, imagery, data graphics, and interfaces. Follow the complete workflow and produce its five required artifacts, continuing design, critique, and refinement for as many moves and rounds as the brief requires."
+description: "DADA (Directed Ambition Design Agent). Use when asked to make or direct graphic design (identity, poster, book, editorial, motion, type, image, data, UI) at maximum artistic ambition, with a self-correcting critic panel. Two modes: Autonomous (art judged on its own terms, no ideology, cause or market as a veto) and Adaptive (ambition plus approachability). Non-linear: traverses the anchor graph through a frontier, with no move quota, until the critics converge. Uses any graph, workflow, diagram or task tooling available. Follow the Workflow section step by step and produce its five required artifacts rather than only borrowing the anchors."
 ---
 
 # DADA: Directed Ambition Design Agent
@@ -9,19 +9,43 @@ description: "DADA (Directed Ambition Design Agent). Create or direct graphic de
 
 Loading this skill means performing the workflow below, not borrowing its vocabulary. A run is complete only when these five artifacts exist in `DESIGN-LOG.md` (create it and append as you go; if you cannot write files, put them in your reply):
 
-1. **Traversal Plan**
+1. **Traversal Plan**, including the living **Frontier**
 2. **Decision Records**, one per move
-3. **Panel Reports**, one per round per move
+3. **Panel Reports**, one per round
 4. **Anchor Ledger**
 5. **Compliance Check**
 
-**Scope.** Always plan, execute, critique and revise as many moves as the entire brief and the strongest achievable artifact require, including a Breaker move. There is one workflow, with no fixed move quota, panel-round cap or preset effort level. The initial plan is a starting frontier, not a completion boundary. Keep expanding the traversal when the artifact, a critic or a brief requirement reveals further necessary work. Continue until the complete brief is satisfied and final inspection reveals no remaining necessary improvement. In your final reply state the tools you used and every step you skipped. Never describe the process as followed if it was not.
+**There is no move quota.** The run ends when the stop conditions in Step 4 hold, however many moves, rounds or revisits that takes. A move count is an outcome, never a target: do not stop because you reached some number, and do not pad to reach one. Lite mode (one move, one panel round) only if the person explicitly asks. If an external limit forces you to stop before the stop conditions hold, write the Open frontier in the log, say the run is incomplete, and give the resume point. If `DESIGN-LOG.md` already exists with an Open frontier, resume from it instead of starting over.
 
-## Governing criteria
+In your final reply state the mode you ran, the tools you used, the stop conditions as met or not met, and every step you skipped. Never describe the process as followed if it was not.
 
-Derive the criteria from the brief and record them in the Traversal Plan. Always pursue artistic ambition, inner necessity and significant form (Kandinsky, Bell, Fry). When the brief calls for communication, use, access or an audience response, satisfy those requirements alongside ambition; MAYA, Most Advanced Yet Acceptable (Loewy), informs that judgment. These are criteria within the same workflow, not alternate operating modes or effort levels. Do not invent audience, ideological, market or functional constraints that the brief does not require.
+## Mode (choose once, state it in the Traversal Plan)
 
-Choose at least five critics from the CRITICS box for maximum difference across aesthetic, formal, perceptual, rhetorical and contextual judgments. Include a critic who challenges conventional form and at least one pair joined by a dotted edge. Cover every governing criterion; add critics when a new concern needs independent expertise. For work that serves an audience, include Critic: Inclusion (Holmes, Mace) and examine approachability. For art judged on its own terms, make its artistic criteria explicit. Every critic judges the actual artifact; no panel composition changes how much work is required.
+| | Autonomous | Adaptive |
+|---|---|---|
+| Use when | The brief is art on its own terms, or says no ideology, cause or market constraints | The work serves an audience, client or public, or the brief names approachability |
+| Governing criterion | Inner necessity and significant form (Kandinsky, Bell, Fry). Reception (MAYA, perceptual legibility) is an optional dial, never a veto | MAYA, Most Advanced Yet Acceptable (Loewy): the advanced pole and the acceptable pole must both hold; if either is weak, revise the move |
+| Required critics | Critic: Apollonian Order (Wölfflin, Gombrich), Critic: Dionysian Excess (Nietzsche, Venturi), Critic: Rupture (Shklovsky, Marinetti), Critic: Detachment (Ortega y Gasset, Sontag), plus at least 1 more (5 to 7 total) | Critic: Provocateur (Debord, Shklovsky), Critic: Inclusion (Holmes, Mace), plus at least 3 more chosen for maximum difference |
+| Extra record field | Reception dial: used or not, and why | Advanced pole and Acceptable pole, each with its anchor |
+
+If the person does not name a mode, use Autonomous unless the brief names a client, audience or public constraint, and say which you chose and why. In both modes the panel must include at least one pair of critics joined by a dotted edge in the graph.
+
+## How the traversal works (non-linear)
+
+You do not walk a list from top to bottom. You keep a **Frontier**: the set of candidate moves reachable from the anchors you have already visited, in either direction. Each round of work spends one candidate and usually creates several more.
+
+- **Reach** candidates by following every edge touching a visited anchor: outgoing solid edges (what the anchor grounds or extends), incoming edges (what grounds it: back-references), and dotted edges (counterpoints).
+- **Choose the next candidate** in this priority order: (1) open Andon objections, (2) REOPENED moves, (3) dotted counterpoints of BREAK moves not yet applied or declined, (4) the sharpest disagreement between critics in the last panel, (5) incoming-edge anchors that would ground what you have already done, (6) outgoing solid edges.
+- **Branch**: when two or more Breaker candidates are plausible, make each a branch. Write a Decision Record per branch, render each as a spike, run the panel on each, compare them in a Pugh-Matrix in the log, and SCRAP the losers (their records stay, marked superseded).
+- **Reopen**: every move records what it depends on. When a move is ADAPTed or SCRAPped, mark every dependent move REOPENED and put it on the Frontier. Settled moves are never final until the stop conditions hold.
+- **Merge**: when two moves interact (type against grid, color against scale), the interaction is itself a candidate; add it to the Frontier.
+
+Frontier format, updated after every panel round:
+
+```
+## Frontier
+| Candidate | Reached via (edge label, direction) | From anchor | Status OPEN / DEFERRED (reason) / TAKEN (Mn) |
+```
 
 ## Workflow
 
@@ -32,7 +56,8 @@ Check your tool list, and any tool-search or registry facility you have, for too
 | Job | Use, if available | Fallback |
 |---|---|---|
 | Render and navigate the anchor graph | A Mermaid or diagram renderer, visualizer, graph database or knowledge-graph tool; a Mermaid parser to validate | Mermaid text in `DESIGN-LOG.md` |
-| Track workflow state | A todo, plan, task-list or workflow-engine tool: one task per planned move and per panel round | A checklist in `DESIGN-LOG.md` |
+| Compute the Frontier | A graph query for unvisited in- and out-neighbours of visited nodes | Read the edge lines of the graph and list them by hand |
+| Track workflow state | A todo, plan, task-list or workflow-engine tool: one task per Frontier candidate taken and per panel round | A checklist in `DESIGN-LOG.md` |
 | Run the panel | A sub-agent, task or parallel-agent tool: one agent per critic | Sequential, written one critic at a time |
 | Persist the log | A docs, notes or artifact tool, in addition to `DESIGN-LOG.md` | `DESIGN-LOG.md` only |
 
@@ -40,32 +65,34 @@ Record in the Traversal Plan which tool you used for each job, or "none availabl
 
 ### Step 1. Traversal Plan (before touching the work)
 
-1. Read the brief and restate it in one sentence. Derive and record the governing criteria, artistic ambition and every required outcome.
-2. Walk the graph in [references/anchor-graph.md](references/anchor-graph.md) and choose: 1 Stance node, at least 2 Rules nodes (follow solid edges), 1 Breaker node, and 1 counterpoint reached by a dotted edge from a node you chose.
+1. Read the brief and restate it in one sentence. Choose the mode.
+2. Choose the **seed** from the graph in [references/anchor-graph.md](references/anchor-graph.md): 1 Stance node, at least 2 Rules nodes (follow solid edges), 1 Breaker node, and 1 counterpoint reached by a dotted edge from a node you chose. The seed is a starting point, not a plan; it will grow.
 3. Copy every label exactly. Each label must occur verbatim in the graph (grep for it if you can).
-4. Write the plan: the chain of labels with the edge label between each pair, then the currently known necessary moves, each tagged KEEP-THE-RULE or BREAK. Map each requirement in the brief to the moves and observable evidence that will satisfy it. Track dependencies and open branches in a live traversal graph or checklist; add moves as new work is discovered.
-5. Render the graph with your graph tooling and mark the chosen path with the `visited` class (for example, `class stanceId,rule1Id visited`), using node ids from the graph. Without tooling, put the marked Mermaid text in the log.
+4. Write the chain of labels with the edge label between each pair, then the initial Frontier (every candidate one hop from the seed, in both directions), then the first move or moves, tagged KEEP-THE-RULE or BREAK. At least one BREAK move must eventually be taken.
+5. Render the graph with your graph tooling and mark visited anchors with the `visited` class (for example, `class stanceId,rule1Id visited`), using node ids from the graph. Without tooling, put the marked Mermaid text in the log.
 
-### Step 2. For each move, respecting dependencies
+### Step 2. The loop: spend one Frontier candidate per pass
 
 **2a. Decision Record, written BEFORE you make the move:**
 
 ```
-## Move N: <name>  (KEEP-THE-RULE | BREAK)
+## Move Mn: <name>  (KEEP-THE-RULE | BREAK)
+Depends on: M-ids, or "none"
 Anchors: Stance <label> | Rule <label> | Breaker <label> | Counterpoint <label> (dotted edge from <label>)
 Intent: what the move does to the eye and the page.
 Formal argument: claim, grounds, warrant, citing the anchors.
 Alternatives rejected: at least 2, each with the reason.
 Consequence: second-order effects and what the move costs.
 Fence: for any rule being broken, why that rule exists.
-Governing criteria: artistic ambition and brief fitness, each with its anchor and observable evidence.
+Frontier effect: the new candidates this move opens.
+Mode field: Reception dial (Autonomous) | Advanced pole and Acceptable pole (Adaptive)
 ```
 
 **2b. Make the move** in the actual artifact, then render it (screenshot, export or open it) so the panel can see it. If you cannot render, write "unrendered" in the Panel Report and say so in your final reply.
 
 **2c. Convene the panel** on the rendered artifact.
 
-- Composition: at least five independent critics chosen from the CRITICS box to cover the governing criteria with maximum difference and a dotted-edge counterpoint pair. Expand the panel when necessary.
+- Composition: the required critics for your mode, chosen from the CRITICS box.
 - Independence: if you have a sub-agent or task tool, run each critic as its own agent. Otherwise write each critic's report in full before reading the others, with no critic reacting to another's verdict.
 - Evidence rule: every critic must point to something observable in the artifact and name one literature anchor that grounds the judgment. A critic that cites only the plan is invalid; redo it.
 - Run the Critical Response Process in this order: (1) statements of meaning, what the work seems to say; (2) artist questions; (3) neutral questions from critics; (4) opinions, only after the artist permits them.
@@ -74,7 +101,7 @@ Governing criteria: artistic ambition and brief fitness, each with its anchor an
 Panel Report format:
 
 ```
-### Panel, Move N, round R  (artifact examined: <path or screenshot>)
+### Panel, Move Mn or WHOLE, round R  (artifact examined: <path or screenshot>)
 | Critic | Anchor used | Observed in the work | Verdict PASS/OBJECT | Requested change |
 Statements of meaning: ...
 Artist questions: ...
@@ -85,60 +112,64 @@ Andon pulled: yes/no, by whom
 
 **2d. Resolve every OBJECT** with exactly one of:
 
-- **ADAPT**: change the move, re-render, and re-run at least the objecting critics for as many rounds as needed. If another identical revision would repeat a failed approach, change the approach or frame and record the evidence; do not silently lower the criterion.
+- **ADAPT**: change the move, re-render, and re-run at least the objecting critics (maximum 3 rounds on one move, after which treat it as a frame swap).
 - **SCRAP**: revert the move and mark its Decision Record as superseded; do not delete it.
-- **OVERRULE**: allowed only with a written reason citing the governing criteria derived from the brief. The objection stays in the log.
+- **OVERRULE**: allowed only with a written reason citing the governing criterion of your mode. The objection stays in the log.
 
-If 3 or more critics object to the same move or the same anchor region, stop and perform a frame swap: replace that region with a sibling anchor reached by an existing edge (dotted edges allowed) and log it as a frame swap.
+Then mark every dependent move REOPENED. If 3 or more critics object to the same move or the same anchor region, stop and perform a frame swap: replace that region with a sibling anchor reached by an existing edge (dotted edges allowed) and log it as a frame swap.
 
-**2e. Update the Anchor Ledger and the live graph** after every panel round:
+**2e. Update the Anchor Ledger, the Frontier and the live graph** after every panel round:
 
 ```
 | Anchor | Role | Status KEEP / ADAPT / SCRAP | Evidence | Replacement or note |
 ```
 
-Every anchor named in any record gets a row. A KEEP must name the strongest objection it survived. Then update the graph through your graph tooling: apply `kept`, `adapted` or `scrapped` to each anchor's node id (for example, `class nodeId scrapped`), add any replacement anchor reached by an existing edge, and re-render. Without tooling, record the updated Mermaid text in the log. Scrapped anchors leave the active path for this project; this file itself is not edited. Do not write moves to please the critics' score; the governing criterion decides.
+Every anchor named in any record gets a row. A KEEP must name the strongest objection it survived. Add every new candidate to the Frontier and mark the one you spent TAKEN. Then update the graph through your graph tooling: apply `kept`, `adapted` or `scrapped` to each anchor's node id (for example, `class nodeId scrapped`), add any replacement anchor reached by an existing edge, and re-render. Without tooling, record the updated Mermaid text in the log. Scrapped anchors leave the active path for this project; the reference file itself is not edited. Do not write moves to please the critics' score; the governing criterion decides.
 
-### Step 3. Expand and repeat until the work is complete
+### Step 3. Whole-artifact rounds
 
-After every move and panel round, inspect the actual artifact against the entire brief and the governing criterion. Add moves for uncovered requirements, failed interactions between moves, craft defects and necessary improvements surfaced by critique. Revisit earlier moves when later changes invalidate them. Run independent branches and critics in parallel when tools permit and their changes do not conflict.
+Moves that pass alone can fail together. Run a **WHOLE** panel round on the entire artifact whenever a cluster of related moves settles, whenever the Frontier changes substantially, and always before the stop test. Objections raised here about interactions become new Frontier candidates or REOPENED moves. Whole-artifact rounds are not capped, but if 3 consecutive whole rounds each produce a new OBJECT, do not make another move: perform a frame swap or a double-loop revision of the criterion, panel or graph instead.
 
-Continue Step 2 until every required deliverable is rendered and examined, every brief requirement has observable evidence, every OBJECT is resolved as ADAPT, SCRAP or a reasoned OVERRULE, and a final inspection reveals no remaining necessary move. Exhausting the initial move list, reaching a round count, or completing one part is never a stopping condition. A high move count alone is not evidence of quality; each added move must serve the brief or resolve a witnessed defect.
+### Step 4. Stop test and close
 
-If a real tool or platform limit interrupts execution, preserve the current artifact, live graph, decisions, objections and exact remaining moves in DESIGN-LOG.md and report the run as incomplete. Resume from that state when execution is available; do not call the work complete because a turn ended.
+Do not close until all of these hold. If any fails, go back to Step 2.
 
-### Step 4. Close
+- **S1.** The Frontier has no OPEN items; each is TAKEN or DEFERRED with a recorded reason.
+- **S2.** A WHOLE panel round returned PASS from every required critic with no Andon.
+- **S3.** Saturation: two consecutive WHOLE rounds produced no ADAPT, SCRAP, REOPEN or new OPEN Frontier item.
+- **S4.** Ambition push: you deliberately escalated the boldest move (a Breaker pushed further) and logged the result. A push is a move; if it survives, S2 and S3 must be satisfied again with it in place.
+- **S5.** Every dotted edge leaving an anchor you used is either applied or declined with a recorded reason.
 
-0. **Completion inspection.** Re-render the final deliverables and inspect the entire brief, including interactions between earlier and later moves. Record the evidence for each requirement and any remaining necessary work. If work remains, return to Step 3 before closing.
+Then close:
 
 1. **Double loop.** In one paragraph, say whether the criterion, the panel or the graph itself failed the work, and name one concrete amendment (a node to add or scrap, or a critic to change) under "Graph amendments".
 2. **Compliance Check**, each line with a pointer to where it is satisfied:
    - [ ] Tooling inventory done; tool used for each job, or "none available"
-   - [ ] Governing criteria derived from the brief, with artistic ambition and required outcomes stated
-   - [ ] Traversal Plan with exact labels, including one dotted-edge counterpoint
-   - [ ] Dynamic traversal expanded until all necessary moves are complete, including a BREAK
-   - [ ] Every brief requirement has observable evidence in the final rendered deliverables
-   - [ ] Final inspection found no remaining necessary work; the initial move list and round counts were not used as stopping conditions
-   - [ ] A Decision Record written before each move, with all fields filled
-   - [ ] A Panel Report per round per move, from a panel covering the governing criteria with independent and contrasting judgments, each critic citing something observable
-   - [ ] Every OBJECT resolved as ADAPT, SCRAP or OVERRULE
+   - [ ] Mode stated with the reason
+   - [ ] Seed with exact labels, including one dotted-edge counterpoint, and a living Frontier
+   - [ ] At least one BREAK move taken (or Lite mode stated), and no quota used as a stopping rule
+   - [ ] A Decision Record written before each move, with all fields filled, including dependencies
+   - [ ] A Panel Report per round from a panel meeting the mode's composition rule, each critic citing something observable
+   - [ ] Every OBJECT resolved as ADAPT, SCRAP or OVERRULE, with dependents reopened
+   - [ ] WHOLE rounds run; S1 to S5 each shown as met, with where
    - [ ] Anchor Ledger complete and the live graph updated
    - [ ] Double-loop paragraph written
-   - [ ] Final reply states the tools used and everything skipped
+   - [ ] Final reply states the mode, the tools used, the stop conditions and everything skipped
 
 ## Anti-skip rules
 
+- A move count is never a stopping criterion. Stopping because you reached some number, or because the first pass felt complete, is a skip.
+- A linear walk down a list is not a traversal: follow incoming and dotted edges, branch, and reopen settled moves.
 - A commit message or code comment is not a Decision Record.
 - A quick mental check or a one-line "I considered X" is not a panel.
-- One move is not a traversal.
 - Naming an anchor is not using it: it must appear in a record's argument or in a critic's observation, tied to something in the work.
 - Not looking for graph or workflow tooling is not the same as none being available.
-- Short on effort or finishing a turn is not an exemption. Continue while necessary work remains. If execution is actually interrupted, preserve the exact remaining work and report incomplete; do not shrink the brief or declare completion to fit an arbitrary effort budget.
+- Short on effort is not an exemption. If an external limit forces a stop, write the Open frontier and say the run is incomplete; do not claim the stop conditions held.
 
 ## Reading the graph
 
-Solid arrows are forward references (grounds, extends, applies). Dotted arrows are counterpoints or back-references. Boxes are clusters; an arrow into the CRITICS box means the whole panel. All anchors remain available; the brief determines their relevance. Colors: amber stance, grey rules, pink breakers, violet expression, green systems, slate canon, teal reason, orange welcome, red critics, magenta lenses, cyan panel method, lime adaptation, gold autonomy of art, blue existing catalog anchors. Status classes for the live graph: `visited`, `kept`, `adapted`, `scrapped`.
+Solid arrows are forward references (grounds, extends, applies). Dotted arrows are counterpoints or back-references. Boxes are clusters; an arrow into the CRITICS box means the whole panel. The mode only changes the governing criterion and the required critics; every anchor stays available in both. Colors: amber stance, grey rules, pink breakers, violet expression, green systems, slate canon, teal reason, orange welcome, red critics, magenta lenses, cyan panel method, lime adaptation, gold autonomy of art, blue existing catalog anchors. Status classes for the live graph: `visited`, `kept`, `adapted`, `scrapped`.
 
 ## Anchor graph
 
-Read [references/anchor-graph.md](references/anchor-graph.md) before choosing the traversal and critics. It contains the complete source graph, including all labels, edges and status classes.
+Read [references/anchor-graph.md](references/anchor-graph.md) before choosing the seed and the panel. It contains the complete source graph, including all labels, edges and status classes. Copy labels from it exactly.

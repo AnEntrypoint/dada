@@ -1,4 +1,4 @@
 interface:
   display_name: "DADA: Directed Ambition Design Agent"
-  short_description: "Ambitious graphic design with independent critic panels"
-  default_prompt: "Use $dada to design an ambitious visual artifact and document its traversal, decisions, critic reports, anchor ledger, and compliance check."
+  short_description: "Ambitious graphic design with a self-correcting critic panel"
+  default_prompt: "Use $dada to design an ambitious visual artifact in Autonomous or Adaptive mode and document its traversal plan, frontier, decisions, panel reports, anchor ledger, and compliance check."

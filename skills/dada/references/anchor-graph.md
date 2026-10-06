@@ -735,9 +735,9 @@ flowchart LR
   armstrong -->|theory readings for| lupMiller
   crit_dionys -->|tests typographic excess with| barnbrook
   barnbrook -.->|same expressive moment as| brody
-  kandCSA -->|inner necessity informs the artistic criterion of| c_adr
-  CRITICS -->|judge artistic necessity against| kandCSA
-  argyris -->|double loop revises the artistic criterion in| kandCSA
+  kandCSA -->|Autonomous mode: inner necessity is the governing criterion of| c_adr
+  CRITICS -->|Autonomous mode: judge each move against| kandCSA
+  argyris -->|double loop revises the Autonomous criterion in| kandCSA
   classDef stance fill:#fef3c7,stroke:#b45309,color:#111827
   classDef rules fill:#e5e7eb,stroke:#374151,color:#111827
   classDef break fill:#fce7f3,stroke:#be185d,color:#111827
