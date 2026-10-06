@@ -2,7 +2,7 @@
 
 An agent skill for ambitious graphic design, adapted from the supplied Graphic Design Agentic Workflow (gdaw). It supports identity, posters, books, editorial design, motion, typography, imagery, data graphics, and interfaces.
 
-The complete original anchor graph is preserved in a linked reference. The skill is renamed to `dada`, with Full mode updated to expand its traversal and continue for as many moves and critique rounds as the brief requires.
+The original anchor catalog and graph structure live in a linked reference. DADA follows one workflow that expands its traversal and continues for as many moves and critique rounds as the complete brief and strongest achievable artifact require.
 
 ## Install
 
@@ -20,7 +20,7 @@ For Codex, `~/.codex/skills/dada` is also supported. Preserve any existing insta
 
 ## Use
 
-Invoke `$dada` with a design brief. Autonomous mode judges art on its own terms; Adaptive mode balances ambition with audience approachability. Full mode uses as many moves and critique rounds as needed, including a Breaker move, with independent critics and parallel branches when agent tools are available. Completion requires evidence for the entire brief, resolved objections, and a final inspection with no remaining necessary work. Lite mode applies only when explicitly requested.
+Invoke `$dada` with a design brief. DADA always pursues maximum artistic ambition, derives its governing criteria from the brief, and uses as many moves and critique rounds as needed. The workflow includes a Breaker move, independent critics and parallel branches when agent tools are available. Completion requires evidence for the entire brief, resolved objections, and a final inspection with no remaining necessary improvement. There are no selectable effort or aesthetic modes.
 
 The workflow records a Traversal Plan, Decision Records, Panel Reports, an Anchor Ledger, and a Compliance Check in `DESIGN-LOG.md`. Read `skills/dada/SKILL.md` for the full contract and `skills/dada/references/anchor-graph.md` for the graph.
 

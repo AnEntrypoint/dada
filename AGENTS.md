@@ -4,7 +4,7 @@ Use the gm skill and connected gm MCP for project work, including delegated work
 
 The distributable skill lives in `skills/dada/`. `.agents/skills/dada` links to that directory for workspace installation. Keep required YAML frontmatter and `agents/openai.yaml` consistent with the `dada` name. The complete Mermaid graph lives in `references/anchor-graph.md`; preserve its node labels, edges and classes when maintaining packaging.
 
-This package came from the uploaded Graphic Design Agentic Workflow. Packaging renamed gdaw to DADA and extracted the original graph unchanged. The user requested open-ended execution: Full mode must expand its traversal and continue until the complete brief is satisfied, with no fixed move quota or panel-round cap. Preserve the source’s two modes, five required artifacts, move and critic requirements, and objection resolution rules.
+This package came from the uploaded Graphic Design Agentic Workflow. Packaging renamed gdaw to DADA and extracted the graph into a reference. The user explicitly removed all effort and aesthetic modes: one workflow must expand its traversal and continue until the complete brief and strongest achievable artifact are satisfied, with no fixed move quota or panel-round cap. The brief supplies governing criteria; all anchor nodes and graph connections remain, with three legacy mode labels updated. Preserve the five required artifacts, independent contrasting critics, and objection resolution rules.
 
 Validate skill metadata with the installed skill-creator quick_validate.py helper and check that relative references and the workspace discovery link resolve. Do not publish local gm state, machine configuration, credentials, or generated design logs.
 
