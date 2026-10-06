@@ -1,2 +1,5 @@
-const folds=document.getElementById('folds');
-if(folds){for(let i=0;i<72;i+=1){const petal=document.createElementNS('http://www.w3.org/2000/svg','ellipse');petal.setAttribute('cx','350');petal.setAttribute('cy','350');petal.setAttribute('rx','210');petal.setAttribute('ry','64');petal.setAttribute('transform',`rotate(${i*5} 350 350) translate(45 0)`);petal.setAttribute('fill','none');petal.setAttribute('stroke','#191915');petal.setAttribute('stroke-width','2');folds.appendChild(petal);}}
+import {createSculpture} from './art.js';
+const sculpture=createSculpture(document.getElementById('hero-sculpture'));
+const motion=document.getElementById('motion-toggle');
+function syncMotion(){motion.setAttribute('aria-pressed',String(sculpture.state.paused));motion.innerHTML=sculpture.state.paused?'Resume motion <span aria-hidden="true">▷</span>':'Pause motion <span aria-hidden="true">Ⅱ</span>';}
+if(sculpture){syncMotion();motion.addEventListener('click',()=>{sculpture.setPaused(!sculpture.state.paused);syncMotion();});document.getElementById('hero-sculpture').addEventListener('motionchange',syncMotion);}
