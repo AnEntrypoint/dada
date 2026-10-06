@@ -11,3 +11,5 @@
 .progress-list li.current{color:#b83220}
 
 @media(max-width:800px){nav .nav-studio{display:none}}
+
+.hero-description{max-width:350px}
