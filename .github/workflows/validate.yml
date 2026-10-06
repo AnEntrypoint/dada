@@ -1,0 +1,15 @@
+name: Validate skills
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 -m pip install PyYAML==6.0.2
+      - run: python3 scripts/validate_skills.py
+      - run: git diff --check
