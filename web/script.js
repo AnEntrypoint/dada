@@ -1,0 +1,2 @@
+const folds=document.getElementById('folds');
+if(folds){for(let i=0;i<72;i+=1){const petal=document.createElementNS('http://www.w3.org/2000/svg','ellipse');petal.setAttribute('cx','350');petal.setAttribute('cy','350');petal.setAttribute('rx','210');petal.setAttribute('ry','64');petal.setAttribute('transform',`rotate(${i*5} 350 350) translate(45 0)`);petal.setAttribute('fill','none');petal.setAttribute('stroke','#191915');petal.setAttribute('stroke-width','2');folds.appendChild(petal);}}
