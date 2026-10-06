@@ -1,4 +1,4 @@
-import {createSculpture} from './art.js?v=07';
+import {createSculpture} from './art.js?v=08';
 
 export function setupLab(){
   const section=document.getElementById('studio');
