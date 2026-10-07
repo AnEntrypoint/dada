@@ -117,7 +117,9 @@ Andon pulled: yes/no, by whom
 
 - **ADAPT**: change the move, re-render, and re-run at least the objecting critics (maximum 3 rounds on one move, after which treat it as a frame swap).
 - **SCRAP**: revert the move and mark its Decision Record as superseded; do not delete it.
-- **OVERRULE**: allowed only with a written reason citing the governing criterion of your mode. The objection stays in the log.
+- **OVERRULE**: allowed only with a written reason citing the governing criterion of your mode, or with a measurement that refuses the objection's premise. The objection stays in the log.
+
+**Test an objection's premise against the artifact before you spend a move on it.** A critic can be right about what it sees and wrong about what is there. Measure the premise; if the measurement refuses it, the resolution is OVERRULE with that measurement recorded, not ADAPT. A move spent answering a false premise is a move the work did not get. This is also the only honest way to refuse: a deferral that cannot be undone is a refusal wearing patience, and it belongs in the log as one.
 
 Then mark every dependent move REOPENED. If 3 or more critics object to the same move or the same anchor region, stop and perform a frame swap: replace that region with a sibling anchor reached by an existing edge (dotted edges allowed) and log it as a frame swap.
 
@@ -131,13 +133,17 @@ Every anchor named in any record gets a row. A KEEP must name the strongest obje
 
 **2f. Deletion review and residual diff.** Once, before the stop test: name the substantial elements of the artifact that predate this run and say what each earns. Anything that earns nothing is SCRAPped, and the record carries the retained-value ledger — what the deletion must preserve so the surviving decisions still read as decisions. For any move that refactors, consolidates or deletes, attach a **residual diff** to its record: every computed value or behaviour that changed, each classified intended / inert / regression, with regressions fixed before the next move. The largest single improvement a run can make is often a deletion; a run that only added has not looked.
 
+**2g. Re-measure the artifact's own evidence at its final state.** Before the stop test, and again after any change made after it: list every number, ratio, count or measured claim the *artifact* displays to its own audience, and re-measure each against the artifact as it now stands, by the procedure the artifact states or implies. A figure recorded when a move was made is evidence about that moment, not about the artifact that will be published, and later moves routinely move the figures of earlier ones — a character count, a contrast ratio, a pixel population. An artifact that invites audit cannot print a number an auditor cannot reach. One row each: the printed figure / the procedure that reproduces it / the value at the final state / reproducible or corrected. Correct or delete every figure that drifted. Evidence the artifact cannot let anyone reach — a number with no stated procedure, or a procedure no one can run — is given a procedure or deleted.
+
+The same rule binds this log: a verification row is evidence only if it was measured *after* the edit it verifies. A row measured before that edit is stale the moment the edit lands, and must be re-run. Run 2g after the last edit to the artifact and never earlier, or it is not a final-state measurement.
+
 ### Step 3. Whole-artifact rounds
 
 Moves that pass alone can fail together. Run a **WHOLE** panel round on the entire artifact whenever a cluster of related moves settles, whenever the Frontier changes substantially, and always before the stop test. Objections raised here about interactions become new Frontier candidates or REOPENED moves. Whole-artifact rounds are not capped, but if 3 consecutive whole rounds each produce a new OBJECT, do not make another move: perform a frame swap or a double-loop revision of the criterion, panel or graph instead.
 
 ### Step 4. Stop test and close
 
-Do not close until all of these hold. If any fails, go back to Step 2.
+Do not close until all of these hold and Step 2g has been run against the artifact in its final state. If any fails, go back to Step 2.
 
 - **S1.** The Frontier has no OPEN items; each is TAKEN or DEFERRED with a recorded reason.
 - **S2.** A WHOLE panel round returned PASS from every required critic with no Andon.
@@ -157,6 +163,7 @@ Then close:
    - [ ] A Panel Report per round from a panel meeting the mode's composition rule, each critic citing something observable
    - [ ] Every OBJECT resolved as ADAPT, SCRAP or OVERRULE, with dependents reopened
    - [ ] WHOLE rounds run; S1 to S5 each shown as met, with where
+  - [ ] Every figure the artifact displays re-measured at the final state, with the procedure that reproduces it
    - [ ] Anchor Ledger complete and the live graph updated
    - [ ] Double-loop paragraph written
    - [ ] Final reply states the mode, the tools used, the stop conditions and everything skipped
@@ -175,8 +182,6 @@ Then close:
 ## Reading the graph
 
 Solid arrows are forward references (grounds, extends, applies). Dotted arrows are counterpoints or back-references. Boxes are clusters; an arrow into the CRITICS box means the whole panel. The mode only changes the governing criterion and the required critics; every anchor stays available in both. Colors: amber stance, grey rules, pink breakers, violet expression, green systems, slate canon, teal reason, orange welcome, red critics, magenta lenses, cyan panel method, lime adaptation, gold autonomy of art, blue existing catalog anchors. Status classes for the live graph: `visited`, `kept`, `adapted`, `scrapped`.
-
-## Anchor graph
 
 ## Anchor graph
 
