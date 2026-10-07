@@ -41,7 +41,7 @@ function paint(){
   if(reopen)reopen.disabled=order.indexOf(current)<=0;
 }
 
-function showStep(step){
+function showStep(step,move){
   const button=stepButtons.find(item=>item.dataset.step===step);
   const panel=stepPanels.find(item=>item.dataset.panel===step);
   if(!button||!panel)return false;
@@ -55,9 +55,14 @@ function showStep(step){
   current=step;
   if(wasStale){stale.delete(step);rerun.add(step);}
   paint();
-  const vh=window.innerHeight||document.documentElement.clientHeight||0;
-  const top=panel.getBoundingClientRect().top;
-  if(vh&&(top>vh-160||top<0))panel.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  // Only scroll for a move the reader made. On the initial paint the panel is
+  // far below the fold, and scrolling to it would land the reader past the
+  // hero before they have seen the page.
+  if(move){
+    const vh=window.innerHeight||document.documentElement.clientHeight||0;
+    const top=panel.getBoundingClientRect().top;
+    if(vh&&(top>vh-160||top<0))panel.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  }
   const later=order.slice(order.indexOf(step)+1).filter(s=>stale.has(s)).length;
   caseStatus.textContent=kickerOf(step)+' — recorded design study.'+(wasStale?' Re-run: it went stale and was revisited.':'')+(later?' '+later+' later step'+(later>1?'s':'')+' still marked stale.':'');
   return true;
@@ -69,7 +74,7 @@ function reopenEarlier(){
   stale.clear();
   order.slice(at+1).forEach(step=>stale.add(step));
   reopened.add(target);
-  showStep(target);
+  showStep(target,true);
   const n=stale.size;
   caseStatus.textContent='REOPENED '+kickerOf(target)+' — '+n+' step'+(n>1?'s':'')+' that '+(n>1?'depend':'depends')+' on it marked stale until revisited.';
   stepButtons[at].focus();
@@ -83,7 +88,7 @@ if(caseStudy&&stepButtons.length&&stepPanels.length){
     panel.setAttribute('role','tabpanel');
     panel.setAttribute('aria-labelledby',button.id);
     panel.tabIndex=0;
-    button.addEventListener('click',()=>showStep(button.dataset.step));
+    button.addEventListener('click',()=>showStep(button.dataset.step,true));
     button.addEventListener('keydown',event=>{
       const move={ArrowRight:1,ArrowLeft:-1}[event.key];
       let target;

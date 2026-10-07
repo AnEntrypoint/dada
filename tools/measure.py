@@ -194,14 +194,22 @@ PRESETS = {
 ALL = ['overflow', 'targets', 'bands', 'contrast', 'structure', 'state']
 
 
-def stage(v=None):
-    """Copy web/ to a temp dir with a fresh cache-bust token. Never edits web/."""
+def stage(v=None, nojs=False):
+    """Copy web/ to a temp dir with a fresh cache-bust token. Never edits web/.
+
+    nojs=True strips every <script> from the copy, so a "with scripting off"
+    figure is actually measured with scripting off. The probe's own script is
+    separate and still runs — it is what reports the number.
+    """
     v = v or str(int(time.time() * 1000))
     d = tempfile.mkdtemp(prefix='dada-measure-')
     site = os.path.join(d, 'site')
     shutil.copytree(WEB, site, symlinks=True)
     idx = os.path.join(site, 'index.html')
     s = open(idx, encoding='utf-8').read()
+    if nojs:
+        s = re.sub(r'<script\b[^>]*>.*?</script>', '', s, flags=re.S | re.I)
+        s = re.sub(r'<script\b[^>]*/\s*>', '', s, flags=re.I)
     s2 = re.sub(r'([?&]v=)\d+', lambda m: m.group(1) + v, s)
     if s2 == s and '?v=' not in s:
         s2 = s.replace('.css"', '.css?v=%s"' % v).replace('.js"', '.js?v=%s"' % v)
@@ -264,7 +272,7 @@ def main():
     widths = [int(x) for x in a.widths.split(',') if x.strip()]
     height = a.fold or a.h
 
-    d, site, probe = stage()
+    d, site, probe = stage(nojs=a.nojs)
     try:
         if a.shot:
             w = widths[0]
