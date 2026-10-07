@@ -35,7 +35,7 @@ If the person does not name a mode, use Autonomous unless the brief names a clie
 You do not walk a list from top to bottom. You keep a **Frontier**: the set of candidate moves reachable from the anchors you have already visited, in either direction. Each round of work spends one candidate and usually creates several more.
 
 - **Reach** candidates by following every edge touching a visited anchor: outgoing solid edges (what the anchor grounds or extends), incoming edges (what grounds it: back-references), and dotted edges (counterpoints).
-- **Choose the next candidate** in this priority order: (1) open Andon objections, (2) REOPENED moves, (3) dotted counterpoints of BREAK moves not yet applied or declined, (4) the sharpest disagreement between critics in the last panel, (5) incoming-edge anchors that would ground what you have already done, (6) outgoing solid edges.
+- **Choose the next candidate** in this priority order: (1) open Andon objections, (2) REOPENED moves, (3) dotted counterpoints of BREAK moves not yet applied or declined, (4) the sharpest disagreement between critics in the last panel, (5) incoming-edge anchors that would ground what you have already done, (6) outgoing solid edges. Among candidates of equal rank, take the one that changes the most: a move that alters the artifact's structure outranks one that alters a value, and a deletion that removes a competing system outranks an addition.
 - **Branch**: when two or more Breaker candidates are plausible, make each a branch. Write a Decision Record per branch, render each as a spike, run the panel on each, compare them in a Pugh-Matrix in the log, and SCRAP the losers (their records stay, marked superseded).
 - **Reopen**: every move records what it depends on. When a move is ADAPTed or SCRAPped, mark every dependent move REOPENED and put it on the Frontier. Settled moves are never final until the stop conditions hold.
 - **Merge**: when two moves interact (type against grid, color against scale), the interaction is itself a candidate; add it to the Frontier.
@@ -69,7 +69,8 @@ Record in the Traversal Plan which tool you used for each job, or "none availabl
 2. Choose the **seed** from the graph in [references/anchor-graph.md](references/anchor-graph.md): 1 Stance node, at least 2 Rules nodes (follow solid edges), 1 Breaker node, and 1 counterpoint reached by a dotted edge from a node you chose. The seed is a starting point, not a plan; it will grow.
 3. Copy every label exactly. Each label must occur verbatim in the graph (grep for it if you can).
 4. Write the chain of labels with the edge label between each pair, then the initial Frontier (every candidate one hop from the seed, in both directions), then the first move or moves, tagged KEEP-THE-RULE or BREAK. At least one BREAK move must eventually be taken.
-5. Render the graph with your graph tooling and mark visited anchors with the `visited` class (for example, `class stanceId,rule1Id visited`), using node ids from the graph. Without tooling, put the marked Mermaid text in the log.
+5. **Premortem, round R0.** If an artifact already exists, convene a WHOLE panel round on it as it stands *before* the first move, and enter its objections as the first Frontier candidates. A run that has never judged what it inherited is optimising a starting point nobody has defended.
+6. Render the graph with your graph tooling and mark visited anchors with the `visited` class (for example, `class stanceId,rule1Id visited`), using node ids from the graph. Without tooling, put the marked Mermaid text in the log.
 
 ### Step 2. The loop: spend one Frontier candidate per pass
 
@@ -89,6 +90,8 @@ Mode field: Reception dial (Autonomous) | Advanced pole and Acceptable pole (Ada
 ```
 
 **2b. Make the move** in the actual artifact, then render it (screenshot, export or open it) so the panel can see it. If you cannot render, write "unrendered" in the Panel Report and say so in your final reply.
+
+**Measure the move; do not assume it.** Wherever the medium can be inspected, compare the artifact before and after and record the number that changed: a rendered size, a computed value, a contrast ratio, a byte count. A change that measures as identical has not been applied, whatever the source now says — find the lever that actually moves the work, and log both the inert attempt and the substitute that worked. Assert on the **computed value**, never on the fact that your edit went in: a patch can land and still be overridden by a later rule. Leave no declaration in the artifact whose effect you cannot show.
 
 **2c. Convene the panel** on the rendered artifact.
 
@@ -126,6 +129,8 @@ Then mark every dependent move REOPENED. If 3 or more critics object to the same
 
 Every anchor named in any record gets a row. A KEEP must name the strongest objection it survived. Add every new candidate to the Frontier and mark the one you spent TAKEN. Then update the graph through your graph tooling: apply `kept`, `adapted` or `scrapped` to each anchor's node id (for example, `class nodeId scrapped`), add any replacement anchor reached by an existing edge, and re-render. Without tooling, record the updated Mermaid text in the log. Scrapped anchors leave the active path for this project; the reference file itself is not edited. Do not write moves to please the critics' score; the governing criterion decides.
 
+**2f. Deletion review and residual diff.** Once, before the stop test: name the substantial elements of the artifact that predate this run and say what each earns. Anything that earns nothing is SCRAPped, and the record carries the retained-value ledger — what the deletion must preserve so the surviving decisions still read as decisions. For any move that refactors, consolidates or deletes, attach a **residual diff** to its record: every computed value or behaviour that changed, each classified intended / inert / regression, with regressions fixed before the next move. The largest single improvement a run can make is often a deletion; a run that only added has not looked.
+
 ### Step 3. Whole-artifact rounds
 
 Moves that pass alone can fail together. Run a **WHOLE** panel round on the entire artifact whenever a cluster of related moves settles, whenever the Frontier changes substantially, and always before the stop test. Objections raised here about interactions become new Frontier candidates or REOPENED moves. Whole-artifact rounds are not capped, but if 3 consecutive whole rounds each produce a new OBJECT, do not make another move: perform a frame swap or a double-loop revision of the criterion, panel or graph instead.
@@ -137,12 +142,12 @@ Do not close until all of these hold. If any fails, go back to Step 2.
 - **S1.** The Frontier has no OPEN items; each is TAKEN or DEFERRED with a recorded reason.
 - **S2.** A WHOLE panel round returned PASS from every required critic with no Andon.
 - **S3.** Saturation: two consecutive WHOLE rounds produced no ADAPT, SCRAP, REOPEN or new OPEN Frontier item.
-- **S4.** Ambition push: you deliberately escalated the boldest move (a Breaker pushed further) and logged the result. A push is a move; if it survives, S2 and S3 must be satisfied again with it in place.
+- **S4.** Ambition push: you deliberately escalated the boldest move (a Breaker pushed further) and logged the result, **including what changed in the rendered work**: a measured delta, or the measured finding that the intended lever was inert and which lever moved instead. A push that cannot be shown to have changed anything does not satisfy S4 — it is a declaration, not an escalation. A push is a move; if it survives, S2 and S3 must be satisfied again with it in place.
 - **S5.** Every dotted edge leaving an anchor you used is either applied or declined with a recorded reason.
 
 Then close:
 
-1. **Double loop.** In one paragraph, say whether the criterion, the panel or the graph itself failed the work, and name one concrete amendment (a node to add or scrap, or a critic to change) under "Graph amendments".
+1. **Double loop.** In one paragraph, say whether the criterion, the panel or the graph itself failed the work, and name one concrete amendment (a node to add or scrap, or a critic to change) under "Graph amendments". Then write the **Carry-Forward Ledger**: the durable, domain-specific facts this run established by measurement, of the kind a later run in this medium would otherwise rediscover the hard way (in CSS, for example: a media query adds no specificity, so a later plain rule beats an earlier media-query rule at equal specificity; a percentage width on a grid item sized by an `fr` track is inert, because the track absorbs it). One line each: the fact, the measurement that established it, and the move it changed. Keep it in a carry-forward file beside the log, and read that file before Step 1 of any later run on the same project. Amendments to the *process* belong in the workflow text; facts about the *medium* belong here.
 2. **Compliance Check**, each line with a pointer to where it is satisfied:
    - [ ] Tooling inventory done; tool used for each job, or "none available"
    - [ ] Mode stated with the reason
@@ -158,6 +163,7 @@ Then close:
 
 ## Anti-skip rules
 
+- An escalation you did not measure is not an escalation, and a patch you did not verify at the computed value is not a change.
 - A move count is never a stopping criterion. Stopping because you reached some number, or because the first pass felt complete, is a skip.
 - A linear walk down a list is not a traversal: follow incoming and dotted edges, branch, and reopen settled moves.
 - A commit message or code comment is not a Decision Record.
@@ -169,6 +175,8 @@ Then close:
 ## Reading the graph
 
 Solid arrows are forward references (grounds, extends, applies). Dotted arrows are counterpoints or back-references. Boxes are clusters; an arrow into the CRITICS box means the whole panel. The mode only changes the governing criterion and the required critics; every anchor stays available in both. Colors: amber stance, grey rules, pink breakers, violet expression, green systems, slate canon, teal reason, orange welcome, red critics, magenta lenses, cyan panel method, lime adaptation, gold autonomy of art, blue existing catalog anchors. Status classes for the live graph: `visited`, `kept`, `adapted`, `scrapped`.
+
+## Anchor graph
 
 ## Anchor graph
 

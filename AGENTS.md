@@ -8,4 +8,6 @@ This package tracks the Graphic Design Agentic Workflow (gdaw); only the name ch
 
 Validate skill metadata with the installed skill-creator quick_validate.py helper and check that relative references and the workspace discovery link resolve. Do not publish local gm state, machine configuration, credentials, or generated design logs.
 
+Seven workflow amendments were pushed upstream into gdaw and then resynced here: the premortem WHOLE round R0 on any inherited artifact; "measure the move, assert on the computed value"; Step 2f deletion review plus the residual diff; S4 requiring a measured delta or a measured inert-lever finding; the Carry-Forward Ledger; that anti-skip line; and the leverage tiebreak when Frontier candidates rank equal. If a resync reverts any of them, re-apply rather than accept the older text.
+
 Keep this file compact. If it exceeds 30 KB, reconcile current facts, notes, memories and git history into a concise replacement before further additions. If comments are encountered, delegate a sweep and preserve any relevant factual rationale here. GM tooling repairs belong in the gm project and must respect filesystem permissions.
