@@ -18,8 +18,11 @@ function kickerOf(step){
 function label(button){
   const step=button.dataset.step;
   const name=button.textContent.replace(/^\s+|\s+$/g,'');
-  const state=reopened.has(step)?'reopened':stale.has(step)?'stale, depends on a reopened decision':rerun.has(step)?'re-run, was stale':'';
-  button.setAttribute('aria-label',name+(state?', '+state:''));
+  const states=[];
+  if(reopened.has(step))states.push('reopened');
+  if(stale.has(step))states.push('stale, depends on a reopened decision');
+  if(rerun.has(step))states.push('was re-run after going stale');
+  button.setAttribute('aria-label',name+(states.length?', '+states.join('; '):''));
 }
 
 function paint(){
@@ -52,14 +55,18 @@ function showStep(step){
   current=step;
   if(wasStale){stale.delete(step);rerun.add(step);}
   paint();
-  const n=stale.size;
-  caseStatus.textContent=kickerOf(step)+' — recorded design study.'+(wasStale?' Re-run: it was marked stale.':'')+(n?' '+n+' later step'+(n>1?'s':'')+' still marked stale.':'');
+  const vh=window.innerHeight||document.documentElement.clientHeight||0;
+  const top=panel.getBoundingClientRect().top;
+  if(vh&&(top>vh-160||top<0))panel.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  const later=order.slice(order.indexOf(step)+1).filter(s=>stale.has(s)).length;
+  caseStatus.textContent=kickerOf(step)+' — recorded design study.'+(wasStale?' Re-run: it went stale and was revisited.':'')+(later?' '+later+' later step'+(later>1?'s':'')+' still marked stale.':'');
   return true;
 }
 
 function reopenEarlier(){
   const at=Math.max(0,order.indexOf(current)-1);
   const target=order[at];
+  stale.clear();
   order.slice(at+1).forEach(step=>stale.add(step));
   reopened.add(target);
   showStep(target);
@@ -102,12 +109,14 @@ document.querySelectorAll('[data-copy]').forEach(button=>{
   button.addEventListener('click',async()=>{
     const source=document.getElementById(button.dataset.copy);
     if(!source)return;
-    const original=button.textContent;
-    const done=()=>{button.textContent='Copied \u2713';setTimeout(()=>{button.textContent=original;},2600);};
+    if(!button.dataset.label)button.dataset.label=button.textContent;
+    const original=button.dataset.label;
+    clearTimeout(button._revert);
+    const flash=text=>{button.textContent=text;clearTimeout(button._revert);button._revert=setTimeout(()=>{button.textContent=original;},2600);};
     try{
       await navigator.clipboard.writeText(source.textContent);
       copyStatus.textContent=button.dataset.copy==='install-command'?'Setup copied. Run it in your project folder.':'Brief copied. Bring it to your agent.';
-      done();
+      flash('Copied ✓');
     }catch{
       const range=document.createRange();
       range.selectNodeContents(source);
@@ -115,6 +124,7 @@ document.querySelectorAll('[data-copy]').forEach(button=>{
       selection.removeAllRanges();
       selection.addRange(range);
       copyStatus.textContent='Text selected. Use your browser copy command.';
+      flash('Selected ✓');
     }
   });
 });
