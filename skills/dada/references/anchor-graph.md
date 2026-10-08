@@ -112,6 +112,7 @@ flowchart LR
     heller100["100 Ideas That Changed Graphic Design (Steven Heller, Véronique Vienne)"]:::canon
     phaidon["Graphic Classics (Phaidon)"]:::canon
     godfrey["Bibliographic: 100 Classic Graphic Design Books (Jason Godfrey)"]:::canon
+    blackAnth["Anthology of Blackness: The State of Black Design (Terresa Moses, Omari Souza, Elizabeth “Dori” Tunstall)"]:::canon
     armstrong["Graphic Design Theory: Readings from the Field (Helen Armstrong)"]:::canon
     lookC["Looking Closer (Bierut, Drenttel, Heller, Holland)"]:::canon
     lupMiller["Design Writing Research (Ellen Lupton, J. Abbott Miller)"]:::canon
@@ -256,7 +257,8 @@ flowchart LR
     crit_apollo["Critic: Apollonian Order (Wölfflin, Gombrich)"]:::critic
     crit_dionys["Critic: Dionysian Excess (Nietzsche, Venturi)"]:::critic
     crit_detach["Critic: Detachment (Ortega y Gasset, Sontag)"]:::critic
-    crit_erasure["Critic: Erasure (Miller, Walters)"]:::critic
+    crit_erasure_miller["Critic: Erasure (Cheryl D. Miller)"]:::critic
+    crit_erasure_walters["Critic: Erasure (Kelly Walters)"]:::critic
   end
   subgraph LENSES["Lenses: Each Critic's Own Literature"]
     greenberg["Art and Culture (Clement Greenberg)"]:::lens
@@ -604,6 +606,7 @@ flowchart LR
   crit_hist -->|checks precedent with| meggs
   crit_hist -->|checks lineage with| hollisC
   crit_hist -->|checks ideas with| heller100
+  crit_hist -->|checks precedent with| blackAnth
   crit_brand -->|checks distinctiveness with| positioning
   crit_brand -->|checks reach and memory with| sharp
   crit_brand -->|checks identity with| wheeler
@@ -616,9 +619,10 @@ flowchart LR
   crit_plur -->|questions cultural default with| tanizaki
   crit_plur -->|questions the Western canon with| walters
   crit_plur -->|checks restraint with| hara
-  crit_erasure -->|asks who the record omits with| millerCD
-  crit_erasure -->|asks what the canon leaves out with| walters
-  crit_erasure -.->|charges the roster of| crit_plur
+  crit_erasure_miller -->|asks who the record omits with| millerCD
+  crit_erasure_walters -->|asks what the canon leaves out with| walters
+  crit_erasure_walters -->|enters the work the canon owes with| blackAnth
+  crit_erasure_miller -.->|charges the roster of| crit_plur
   millerCD -.->|charges the omission of| meggs
   crit_prov -->|attacks the spectacle with| debord
   crit_prov -->|makes strange with| shklovsky

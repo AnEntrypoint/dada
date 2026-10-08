@@ -24,21 +24,26 @@
    takes 28px of a 226px measure, so there the block pays 9-13% (2,905 → 3,180
    at 390, 3,496 → 3,951 at 320, then 3,612.73 and 4,443.72 with the twelfth)
    for twelve boxes where there were eleven ruled lines. */
-.critique-art article{border:1px solid #748db2;background:#152f53;padding:14px;break-inside:avoid;margin:0 0 12px}.critique-art article>span{font:11px/1.6 var(--mono);color:#d4c69f}.critique-art article>span i{font-style:normal}.critique-art h4{font:500 21px/1.35 var(--sans);margin:7px 0 0;letter-spacing:-.015em}.critique-art article p{font-size:12px;line-height:1.6;margin:8px 0 0;color:#d5ccbb}
+.critique-art article{border:1px solid #748db2;background:#152f53;padding:14px;break-inside:avoid;margin:0 0 12px}.critique-art article>span{font:11px/1.6 var(--mono);color:#d4c69f}.critique-art article>span i{font-style:normal}.critique-art h4{font:500 21px/1.35 var(--sans);margin:7px 0 0;letter-spacing:-.015em}.critique-art article p{font-size:12px;line-height:1.6;margin:8px 0 0;color:#d5ccbb;overflow-wrap:anywhere}
 /* The fourth line in a verdict. Every verdict was a span, a heading and a body,
    and none of the three was a source, so 12 of the 13 asked the reader to take a
    surname on faith: 0 held an element for a work. Measured against the two places
    the title could go — folded into the label, the line the eye scans first, which
    grows 35px to a four-line read at 390; or dropped into the body, +38px at 1440
    and indistinguishable from the numerals it sits among — a rubric line of its own
-   measures 1,330 → 1,581px on the panel at 1440 and 4,549 → 5,446px at 390 at the
-   final state, of which 190px and 516px are the 13 lines themselves (deleting them
-   from the live DOM returns 1,391 and 4,930) and the rest the two bodies this round
-   rewrote; 0 overflow at the six widths measured. 11px, so the page paints no type
+   measures 1,330 → 1,708px on the panel at 1440 and 4,549 → 5,921px at 390 at the
+   final state, of which 147px and 569px are the 13 lines themselves (deleting them
+   from the live DOM returns 1,561 and 5,352) and the rest the bodies this round and
+   the last rewrote; 0 overflow at the six widths measured. 11px, so the page paints no type
    below the 11px floor its own verdict counts, and 4px above and below the link,
    because at 1000 and 1920 Harris's line sets on one line and its link then measures
    221 × 15px — under the 24px a target owes: the padding makes the box 27px on one
-   line, 44 on two, 62 on three, and the target rule clean at all six widths. */
+   line, 44 on two, 62 on three, and the target rule clean at all six widths.
+   `overflow-wrap:anywhere`, because the address the eleventh verdict prints for its
+   own entry is a 41-character token and carried the document 12px wide at 320 —
+   317 of scroll against 305 of client, the one width whose column is narrower than
+   the token — while the hero's own bleed, which the overflow check names at every
+   width, is clipped and costs nothing. */
 .critique-art .verdict-src{font-size:11px;line-height:1.6;font-style:italic;color:#d5ccbb;margin:5px 0 0}
 .critique-art .verdict-src a{display:inline-block;padding:4px 0;color:#d5ccbb;border-bottom:1px solid #748db2}
 .critique-art .verdict-src cite{font-style:italic}
@@ -72,7 +77,7 @@
 .graph-row.counterpoint{position:relative}
 .graph-row.counterpoint::before{content:"";position:absolute;top:0;bottom:0;left:-16px;border-left:2px solid #ff997e}
 .graph-row>div i.native{font-style:normal;display:block;font:11px/1.5 var(--mono);color:#d8dfed;margin-top:7px}
-/* Two of the thirteen verdicts are not discharged. The page's red is spent on
+/* One of the thirteen verdicts is not discharged. The page's red is spent on
    exactly that: the debt, not the decoration. Measured 4.71:1 for the flag's
    #081831 on #e94127, and 3.82:1 for the rule against #102544. */
 .critique-art article[data-open]{border-left:3px solid var(--red);padding-left:14px}
