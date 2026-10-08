@@ -233,30 +233,56 @@ flowchart LR
     calori["Signage and Wayfinding Design (Chris Calori)"]:::welcome
   end
   subgraph CRITICS["Critics: A Diverse Panel, Divided by Concern and by Aesthetic School"]
-    crit_formal["Critic: Formalist (Greenberg, Arnheim)"]:::critic
-    crit_sem["Critic: Semiotic (Barthes, Eco)"]:::critic
-    crit_soc["Critic: Social (Papanek, Garland)"]:::critic
-    crit_inc["Critic: Inclusion (Holmes, Mace)"]:::critic
-    crit_use["Critic: Usability (Krug, Nielsen)"]:::critic
-    crit_rhet["Critic: Rhetoric (Aristotle, Buchanan)"]:::critic
-    crit_hist["Critic: Historian (Meggs, Hollis)"]:::critic
-    crit_brand["Critic: Brand Strategy (Ries, Trout, Sharp)"]:::critic
-    crit_craft["Critic: Craft (Sennett, Bringhurst)"]:::critic
-    crit_eco["Critic: Ecology (McDonough, Braungart)"]:::critic
-    crit_plur["Critic: Cross-Cultural (Escobar, Tanizaki)"]:::critic
-    crit_prov["Critic: Provocateur (Debord, Shklovsky)"]:::critic
-    crit_evid["Critic: Evidence (Tufte, Cairo)"]:::critic
-    crit_perc["Critic: Perception (Kahneman, Johnson)"]:::critic
-    crit_wit["Critic: Wit (Fletcher, Munari)"]:::critic
-    crit_rupt["Critic: Rupture (Shklovsky, Marinetti)"]:::critic
-    crit_aesth["Critic: Aestheticist (Wilde, Gautier, Pater)"]:::critic
-    crit_sublime["Critic: Sublime (Burke, Kant)"]:::critic
-    crit_sigform["Critic: Significant Form (Bell, Fry)"]:::critic
-    crit_music["Critic: Musical Structure (Hanslick, Pater)"]:::critic
-    crit_nonobj["Critic: Non-Objective (Malevich, Mondrian)"]:::critic
-    crit_apollo["Critic: Apollonian Order (Wölfflin, Gombrich)"]:::critic
-    crit_dionys["Critic: Dionysian Excess (Nietzsche, Venturi)"]:::critic
-    crit_detach["Critic: Detachment (Ortega y Gasset, Sontag)"]:::critic
+    crit_formal_greenberg["Critic: Formalist (Greenberg)"]:::critic
+    crit_formal_arnheim["Critic: Formalist (Arnheim)"]:::critic
+    crit_sem_barthes["Critic: Semiotic (Barthes)"]:::critic
+    crit_sem_eco["Critic: Semiotic (Eco)"]:::critic
+    crit_soc_papanek["Critic: Social (Papanek)"]:::critic
+    crit_soc_garland["Critic: Social (Garland)"]:::critic
+    crit_inc_holmes["Critic: Inclusion (Holmes)"]:::critic
+    crit_inc_mace["Critic: Inclusion (Mace)"]:::critic
+    crit_use_krug["Critic: Usability (Krug)"]:::critic
+    crit_use_nielsen["Critic: Usability (Nielsen)"]:::critic
+    crit_rhet_aristotle["Critic: Rhetoric (Aristotle)"]:::critic
+    crit_rhet_buchanan["Critic: Rhetoric (Buchanan)"]:::critic
+    crit_hist_meggs["Critic: Historian (Meggs)"]:::critic
+    crit_hist_hollis["Critic: Historian (Hollis)"]:::critic
+    crit_brand_ries["Critic: Brand Strategy (Ries)"]:::critic
+    crit_brand_trout["Critic: Brand Strategy (Trout)"]:::critic
+    crit_brand_sharp["Critic: Brand Strategy (Sharp)"]:::critic
+    crit_craft_sennett["Critic: Craft (Sennett)"]:::critic
+    crit_craft_bringhurst["Critic: Craft (Bringhurst)"]:::critic
+    crit_eco_mcdonough["Critic: Ecology (McDonough)"]:::critic
+    crit_eco_braungart["Critic: Ecology (Braungart)"]:::critic
+    crit_plur_escobar["Critic: Cross-Cultural (Escobar)"]:::critic
+    crit_plur_tanizaki["Critic: Cross-Cultural (Tanizaki)"]:::critic
+    crit_prov_debord["Critic: Provocateur (Debord)"]:::critic
+    crit_prov_shklovsky["Critic: Provocateur (Shklovsky)"]:::critic
+    crit_evid_tufte["Critic: Evidence (Tufte)"]:::critic
+    crit_evid_cairo["Critic: Evidence (Cairo)"]:::critic
+    crit_perc_kahneman["Critic: Perception (Kahneman)"]:::critic
+    crit_perc_johnson["Critic: Perception (Johnson)"]:::critic
+    crit_wit_fletcher["Critic: Wit (Fletcher)"]:::critic
+    crit_wit_munari["Critic: Wit (Munari)"]:::critic
+    crit_rupt_shklovsky["Critic: Rupture (Shklovsky)"]:::critic
+    crit_rupt_marinetti["Critic: Rupture (Marinetti)"]:::critic
+    crit_aesth_wilde["Critic: Aestheticist (Wilde)"]:::critic
+    crit_aesth_gautier["Critic: Aestheticist (Gautier)"]:::critic
+    crit_aesth_pater["Critic: Aestheticist (Pater)"]:::critic
+    crit_sublime_burke["Critic: Sublime (Burke)"]:::critic
+    crit_sublime_kant["Critic: Sublime (Kant)"]:::critic
+    crit_sigform_bell["Critic: Significant Form (Bell)"]:::critic
+    crit_sigform_fry["Critic: Significant Form (Fry)"]:::critic
+    crit_music_hanslick["Critic: Musical Structure (Hanslick)"]:::critic
+    crit_music_pater["Critic: Musical Structure (Pater)"]:::critic
+    crit_nonobj_malevich["Critic: Non-Objective (Malevich)"]:::critic
+    crit_nonobj_mondrian["Critic: Non-Objective (Mondrian)"]:::critic
+    crit_apollo_wolfflin["Critic: Apollonian Order (Wölfflin)"]:::critic
+    crit_apollo_gombrich["Critic: Apollonian Order (Gombrich)"]:::critic
+    crit_dionys_nietzsche["Critic: Dionysian Excess (Nietzsche)"]:::critic
+    crit_dionys_venturi["Critic: Dionysian Excess (Venturi)"]:::critic
+    crit_detach_ortega["Critic: Detachment (Ortega y Gasset)"]:::critic
+    crit_detach_sontag["Critic: Detachment (Sontag)"]:::critic
     crit_erasure_miller["Critic: Erasure (Cheryl D. Miller)"]:::critic
     crit_erasure_walters["Critic: Erasure (Kelly Walters)"]:::critic
   end
@@ -584,68 +610,122 @@ flowchart LR
   bierut -->|wit as welcome for| maya
   sideways -->|humor as welcome for| maya
   haraW -->|emptiness as invitation for| maya
-  crit_formal -->|judges perceptual form with| arnheim
-  crit_formal -->|judges color with| albers
-  crit_formal -->|judges structure with| mb
-  crit_formal -->|formalist canon from| greenberg
-  crit_sem -->|reads signs with| barthesM
-  crit_sem -->|reads sign systems with| eco
-  crit_sem -->|reads layers of meaning with| panofsky
-  crit_soc -->|asks who benefits with| papanek
-  crit_soc -->|asks about purpose with| fft
-  crit_soc -->|asks about commerce with| pater
-  crit_inc -->|finds who is excluded with| holmes
-  crit_inc -->|checks access with| mace
-  crit_inc -->|measures access with| wcag
-  crit_use -->|tests first-use with| krug
-  crit_use -->|audits with| nielsen
-  crit_use -->|checks signifiers with| norman
-  crit_rhet -->|audits appeals with| aristotle
-  crit_rhet -->|audits design as argument with| buchanan
-  crit_rhet -->|audits claims with| toulmin
-  crit_hist -->|checks precedent with| meggs
-  crit_hist -->|checks lineage with| hollisC
-  crit_hist -->|checks ideas with| heller100
-  crit_hist -->|checks precedent with| blackAnth
-  crit_brand -->|checks distinctiveness with| positioning
-  crit_brand -->|checks reach and memory with| sharp
-  crit_brand -->|checks identity with| wheeler
-  crit_craft -->|checks making with| sennett
-  crit_craft -->|checks type with| bring
-  crit_craft -->|checks the page with| tschichold
-  crit_eco -->|checks material cost with| mcdonough
-  crit_eco -->|checks consequence with| papanek
-  crit_plur -->|questions universal claims with| escobar
-  crit_plur -->|questions cultural default with| tanizaki
-  crit_plur -->|questions the Western canon with| walters
-  crit_plur -->|checks restraint with| hara
+  crit_formal_arnheim -->|judges perceptual form with| arnheim
+  crit_formal_greenberg -->|judges color with| albers
+  crit_formal_arnheim -->|judges color with| albers
+  crit_formal_greenberg -->|judges structure with| mb
+  crit_formal_arnheim -->|judges structure with| mb
+  crit_formal_greenberg -->|formalist canon from| greenberg
+  crit_sem_barthes -->|reads signs with| barthesM
+  crit_sem_eco -->|reads sign systems with| eco
+  crit_sem_barthes -->|reads layers of meaning with| panofsky
+  crit_sem_eco -->|reads layers of meaning with| panofsky
+  crit_soc_papanek -->|asks who benefits with| papanek
+  crit_soc_garland -->|asks about purpose with| fft
+  crit_soc_papanek -->|asks about commerce with| pater
+  crit_soc_garland -->|asks about commerce with| pater
+  crit_inc_holmes -->|finds who is excluded with| holmes
+  crit_inc_mace -->|checks access with| mace
+  crit_inc_holmes -->|measures access with| wcag
+  crit_inc_mace -->|measures access with| wcag
+  crit_use_krug -->|tests first-use with| krug
+  crit_use_nielsen -->|audits with| nielsen
+  crit_use_krug -->|checks signifiers with| norman
+  crit_use_nielsen -->|checks signifiers with| norman
+  crit_rhet_aristotle -->|audits appeals with| aristotle
+  crit_rhet_buchanan -->|audits design as argument with| buchanan
+  crit_rhet_aristotle -->|audits claims with| toulmin
+  crit_rhet_buchanan -->|audits claims with| toulmin
+  crit_hist_meggs -->|checks precedent with| meggs
+  crit_hist_hollis -->|checks lineage with| hollisC
+  crit_hist_meggs -->|checks ideas with| heller100
+  crit_hist_hollis -->|checks ideas with| heller100
+  crit_hist_meggs -->|checks precedent with| blackAnth
+  crit_hist_hollis -->|checks precedent with| blackAnth
+  crit_brand_ries -->|checks distinctiveness with| positioning
+  crit_brand_trout -->|checks distinctiveness with| positioning
+  crit_brand_sharp -->|checks reach and memory with| sharp
+  crit_brand_ries -->|checks identity with| wheeler
+  crit_brand_trout -->|checks identity with| wheeler
+  crit_brand_sharp -->|checks identity with| wheeler
+  crit_craft_sennett -->|checks making with| sennett
+  crit_craft_bringhurst -->|checks type with| bring
+  crit_craft_sennett -->|checks the page with| tschichold
+  crit_craft_bringhurst -->|checks the page with| tschichold
+  crit_eco_mcdonough -->|checks material cost with| mcdonough
+  crit_eco_braungart -->|checks material cost with| mcdonough
+  crit_eco_mcdonough -->|checks consequence with| papanek
+  crit_eco_braungart -->|checks consequence with| papanek
+  crit_plur_escobar -->|questions universal claims with| escobar
+  crit_plur_tanizaki -->|questions cultural default with| tanizaki
+  crit_plur_escobar -->|questions the Western canon with| walters
+  crit_plur_tanizaki -->|questions the Western canon with| walters
+  crit_plur_escobar -->|checks restraint with| hara
+  crit_plur_tanizaki -->|checks restraint with| hara
   crit_erasure_miller -->|asks who the record omits with| millerCD
   crit_erasure_walters -->|asks what the canon leaves out with| walters
   crit_erasure_walters -->|enters the work the canon owes with| blackAnth
-  crit_erasure_miller -.->|charges the roster of| crit_plur
+  crit_erasure_miller -.->|charges the roster of| crit_plur_escobar
+  crit_erasure_miller -.->|charges the roster of| crit_plur_tanizaki
   millerCD -.->|charges the omission of| meggs
-  crit_prov -->|attacks the spectacle with| debord
-  crit_prov -->|makes strange with| shklovsky
-  crit_prov -->|answers orthodoxy with| venturi2
-  crit_evid -->|checks graphical integrity with| tufteV
-  crit_evid -->|checks honesty with| cairoLie
-  crit_evid -->|checks density with| c_tufte
-  crit_perc -->|checks cognitive ease with| kahneman
-  crit_perc -->|checks perception limits with| johnson
-  crit_perc -->|checks grouping with| gestalt
-  crit_wit -->|checks play with| sideways
-  crit_wit -->|checks imagination with| munariF
-  crit_wit -->|checks persuasion with| bierut
-  crit_formal -.->|accused of ignoring context by| crit_soc
-  crit_prov -.->|attacks smoothness favored by| crit_use
-  crit_use -.->|demands clarity from| crit_prov
-  crit_brand -.->|pulls toward recognisability against| crit_prov
-  crit_eco -.->|questions material cost of| crit_craft
-  crit_plur -.->|questions universalism of| crit_inc
-  crit_sem -.->|reads past the argument of| crit_rhet
-  crit_evid -.->|demands honesty from| crit_wit
-  crit_hist -.->|reminds of precedent for| crit_prov
-  crit_perc -.->|tests the claims of| crit_formal
+  crit_prov_debord -->|attacks the spectacle with| debord
+  crit_prov_shklovsky -->|makes strange with| shklovsky
+  crit_prov_debord -->|answers orthodoxy with| venturi2
+  crit_prov_shklovsky -->|answers orthodoxy with| venturi2
+  crit_evid_tufte -->|checks graphical integrity with| tufteV
+  crit_evid_cairo -->|checks honesty with| cairoLie
+  crit_evid_tufte -->|checks density with| c_tufte
+  crit_evid_cairo -->|checks density with| c_tufte
+  crit_perc_kahneman -->|checks cognitive ease with| kahneman
+  crit_perc_johnson -->|checks perception limits with| johnson
+  crit_perc_kahneman -->|checks grouping with| gestalt
+  crit_perc_johnson -->|checks grouping with| gestalt
+  crit_wit_fletcher -->|checks play with| sideways
+  crit_wit_munari -->|checks imagination with| munariF
+  crit_wit_fletcher -->|checks persuasion with| bierut
+  crit_wit_munari -->|checks persuasion with| bierut
+  crit_formal_greenberg -.->|accused of ignoring context by| crit_soc_papanek
+  crit_formal_greenberg -.->|accused of ignoring context by| crit_soc_garland
+  crit_formal_arnheim -.->|accused of ignoring context by| crit_soc_papanek
+  crit_formal_arnheim -.->|accused of ignoring context by| crit_soc_garland
+  crit_prov_debord -.->|attacks smoothness favored by| crit_use_krug
+  crit_prov_debord -.->|attacks smoothness favored by| crit_use_nielsen
+  crit_prov_shklovsky -.->|attacks smoothness favored by| crit_use_krug
+  crit_prov_shklovsky -.->|attacks smoothness favored by| crit_use_nielsen
+  crit_use_krug -.->|demands clarity from| crit_prov_debord
+  crit_use_krug -.->|demands clarity from| crit_prov_shklovsky
+  crit_use_nielsen -.->|demands clarity from| crit_prov_debord
+  crit_use_nielsen -.->|demands clarity from| crit_prov_shklovsky
+  crit_brand_ries -.->|pulls toward recognisability against| crit_prov_debord
+  crit_brand_ries -.->|pulls toward recognisability against| crit_prov_shklovsky
+  crit_brand_trout -.->|pulls toward recognisability against| crit_prov_debord
+  crit_brand_trout -.->|pulls toward recognisability against| crit_prov_shklovsky
+  crit_brand_sharp -.->|pulls toward recognisability against| crit_prov_debord
+  crit_brand_sharp -.->|pulls toward recognisability against| crit_prov_shklovsky
+  crit_eco_mcdonough -.->|questions material cost of| crit_craft_sennett
+  crit_eco_mcdonough -.->|questions material cost of| crit_craft_bringhurst
+  crit_eco_braungart -.->|questions material cost of| crit_craft_sennett
+  crit_eco_braungart -.->|questions material cost of| crit_craft_bringhurst
+  crit_plur_escobar -.->|questions universalism of| crit_inc_holmes
+  crit_plur_escobar -.->|questions universalism of| crit_inc_mace
+  crit_plur_tanizaki -.->|questions universalism of| crit_inc_holmes
+  crit_plur_tanizaki -.->|questions universalism of| crit_inc_mace
+  crit_sem_barthes -.->|reads past the argument of| crit_rhet_aristotle
+  crit_sem_barthes -.->|reads past the argument of| crit_rhet_buchanan
+  crit_sem_eco -.->|reads past the argument of| crit_rhet_aristotle
+  crit_sem_eco -.->|reads past the argument of| crit_rhet_buchanan
+  crit_evid_tufte -.->|demands honesty from| crit_wit_fletcher
+  crit_evid_tufte -.->|demands honesty from| crit_wit_munari
+  crit_evid_cairo -.->|demands honesty from| crit_wit_fletcher
+  crit_evid_cairo -.->|demands honesty from| crit_wit_munari
+  crit_hist_meggs -.->|reminds of precedent for| crit_prov_debord
+  crit_hist_meggs -.->|reminds of precedent for| crit_prov_shklovsky
+  crit_hist_hollis -.->|reminds of precedent for| crit_prov_debord
+  crit_hist_hollis -.->|reminds of precedent for| crit_prov_shklovsky
+  crit_perc_kahneman -.->|tests the claims of| crit_formal_greenberg
+  crit_perc_kahneman -.->|tests the claims of| crit_formal_arnheim
+  crit_perc_johnson -.->|tests the claims of| crit_formal_greenberg
+  crit_perc_johnson -.->|tests the claims of| crit_formal_arnheim
   page -->|choose critics for maximum cognitive difference| CRITICS
   surowiecki -->|keep judgments independent| CRITICS
   debono -->|parallel viewpoints for| CRITICS
@@ -682,43 +762,80 @@ flowchart LR
   c_red -->|criteria that fail first define done for| c_dod
   c_dod -->|done when objections are resolved or recorded in| c_keep
   c_spike -->|cheapest test of an adapted move for| c_pdca
-  crit_sem -->|reads image and text with| barthesI
-  crit_wit -->|checks wit with| bierut
-  crit_rupt -->|makes strange with| shklovsky
-  crit_rupt -->|breaks form with| marinetti
-  crit_rupt -->|breaks the grid with| samBreak
-  crit_aesth -->|defends art for its own sake with| gautier
-  crit_aesth -->|defends uselessness with| wilde
-  crit_aesth -->|defends sensation with| waltpater
-  crit_sublime -->|seeks awe with| burke
-  crit_sublime -->|tests judgment with| kant
-  crit_sigform -->|tests significant form with| bell
-  crit_sigform -->|tests design and vision with| fry
-  crit_sigform -->|tests inner necessity with| kandCSA
-  crit_music -->|tests form as content with| hanslick
-  crit_music -->|tests aspiration to music with| waltpater
-  crit_music -->|tests rhythm with| kandinsky
-  crit_nonobj -->|tests pure feeling with| malevich
-  crit_nonobj -->|tests pure plastic means with| mondrian
-  crit_nonobj -->|tests abstraction with| kandinsky
-  crit_apollo -->|tests order and unity with| wolfflin
-  crit_apollo -->|tests ordered decoration with| gombrich
-  crit_apollo -->|tests unity with| poetics
-  crit_dionys -->|tests intoxication with| nietzsche
-  crit_dionys -->|tests ornament with| bantjes
-  crit_dionys -->|tests complexity with| venturi1
-  crit_detach -->|guards against over-interpretation with| sontag
-  crit_detach -->|guards the dehumanized work with| ortega
-  crit_detach -->|guards emptiness with| haraW
-  crit_apollo -.->|order challenged by| crit_dionys
-  crit_dionys -.->|excess disciplined by| crit_apollo
-  crit_nonobj -.->|refuses the signs read by| crit_sem
-  crit_sublime -.->|overwhelm answered by ease of| crit_perc
-  crit_rupt -.->|rupture checked against precedent by| crit_hist
-  crit_wit -.->|levity tempers awe of| crit_sublime
-  crit_detach -.->|warns against over-explaining by| crit_formal
-  crit_aesth -.->|sensation answers the structure of| crit_sigform
-  crit_music -.->|time and rhythm answer the stillness of| crit_nonobj
+  crit_sem_barthes -->|reads image and text with| barthesI
+  crit_wit_fletcher -->|checks wit with| bierut
+  crit_wit_munari -->|checks wit with| bierut
+  crit_rupt_shklovsky -->|makes strange with| shklovsky
+  crit_rupt_marinetti -->|breaks form with| marinetti
+  crit_rupt_shklovsky -->|breaks the grid with| samBreak
+  crit_rupt_marinetti -->|breaks the grid with| samBreak
+  crit_aesth_gautier -->|defends art for its own sake with| gautier
+  crit_aesth_wilde -->|defends uselessness with| wilde
+  crit_aesth_pater -->|defends sensation with| waltpater
+  crit_sublime_burke -->|seeks awe with| burke
+  crit_sublime_kant -->|tests judgment with| kant
+  crit_sigform_bell -->|tests significant form with| bell
+  crit_sigform_fry -->|tests design and vision with| fry
+  crit_sigform_bell -->|tests inner necessity with| kandCSA
+  crit_sigform_fry -->|tests inner necessity with| kandCSA
+  crit_music_hanslick -->|tests form as content with| hanslick
+  crit_music_pater -->|tests aspiration to music with| waltpater
+  crit_music_hanslick -->|tests rhythm with| kandinsky
+  crit_music_pater -->|tests rhythm with| kandinsky
+  crit_nonobj_malevich -->|tests pure feeling with| malevich
+  crit_nonobj_mondrian -->|tests pure plastic means with| mondrian
+  crit_nonobj_malevich -->|tests abstraction with| kandinsky
+  crit_nonobj_mondrian -->|tests abstraction with| kandinsky
+  crit_apollo_wolfflin -->|tests order and unity with| wolfflin
+  crit_apollo_gombrich -->|tests ordered decoration with| gombrich
+  crit_apollo_wolfflin -->|tests unity with| poetics
+  crit_apollo_gombrich -->|tests unity with| poetics
+  crit_dionys_nietzsche -->|tests intoxication with| nietzsche
+  crit_dionys_nietzsche -->|tests ornament with| bantjes
+  crit_dionys_venturi -->|tests ornament with| bantjes
+  crit_dionys_venturi -->|tests complexity with| venturi1
+  crit_detach_sontag -->|guards against over-interpretation with| sontag
+  crit_detach_ortega -->|guards the dehumanized work with| ortega
+  crit_detach_ortega -->|guards emptiness with| haraW
+  crit_detach_sontag -->|guards emptiness with| haraW
+  crit_apollo_wolfflin -.->|order challenged by| crit_dionys_nietzsche
+  crit_apollo_wolfflin -.->|order challenged by| crit_dionys_venturi
+  crit_apollo_gombrich -.->|order challenged by| crit_dionys_nietzsche
+  crit_apollo_gombrich -.->|order challenged by| crit_dionys_venturi
+  crit_dionys_nietzsche -.->|excess disciplined by| crit_apollo_wolfflin
+  crit_dionys_nietzsche -.->|excess disciplined by| crit_apollo_gombrich
+  crit_dionys_venturi -.->|excess disciplined by| crit_apollo_wolfflin
+  crit_dionys_venturi -.->|excess disciplined by| crit_apollo_gombrich
+  crit_nonobj_malevich -.->|refuses the signs read by| crit_sem_barthes
+  crit_nonobj_malevich -.->|refuses the signs read by| crit_sem_eco
+  crit_nonobj_mondrian -.->|refuses the signs read by| crit_sem_barthes
+  crit_nonobj_mondrian -.->|refuses the signs read by| crit_sem_eco
+  crit_sublime_burke -.->|overwhelm answered by ease of| crit_perc_kahneman
+  crit_sublime_burke -.->|overwhelm answered by ease of| crit_perc_johnson
+  crit_sublime_kant -.->|overwhelm answered by ease of| crit_perc_kahneman
+  crit_sublime_kant -.->|overwhelm answered by ease of| crit_perc_johnson
+  crit_rupt_shklovsky -.->|rupture checked against precedent by| crit_hist_meggs
+  crit_rupt_shklovsky -.->|rupture checked against precedent by| crit_hist_hollis
+  crit_rupt_marinetti -.->|rupture checked against precedent by| crit_hist_meggs
+  crit_rupt_marinetti -.->|rupture checked against precedent by| crit_hist_hollis
+  crit_wit_fletcher -.->|levity tempers awe of| crit_sublime_burke
+  crit_wit_fletcher -.->|levity tempers awe of| crit_sublime_kant
+  crit_wit_munari -.->|levity tempers awe of| crit_sublime_burke
+  crit_wit_munari -.->|levity tempers awe of| crit_sublime_kant
+  crit_detach_ortega -.->|warns against over-explaining by| crit_formal_greenberg
+  crit_detach_ortega -.->|warns against over-explaining by| crit_formal_arnheim
+  crit_detach_sontag -.->|warns against over-explaining by| crit_formal_greenberg
+  crit_detach_sontag -.->|warns against over-explaining by| crit_formal_arnheim
+  crit_aesth_wilde -.->|sensation answers the structure of| crit_sigform_bell
+  crit_aesth_wilde -.->|sensation answers the structure of| crit_sigform_fry
+  crit_aesth_gautier -.->|sensation answers the structure of| crit_sigform_bell
+  crit_aesth_gautier -.->|sensation answers the structure of| crit_sigform_fry
+  crit_aesth_pater -.->|sensation answers the structure of| crit_sigform_bell
+  crit_aesth_pater -.->|sensation answers the structure of| crit_sigform_fry
+  crit_music_hanslick -.->|time and rhythm answer the stillness of| crit_nonobj_malevich
+  crit_music_hanslick -.->|time and rhythm answer the stillness of| crit_nonobj_mondrian
+  crit_music_pater -.->|time and rhythm answer the stillness of| crit_nonobj_malevich
+  crit_music_pater -.->|time and rhythm answer the stillness of| crit_nonobj_mondrian
   burke -->|sublime precedes| kant
   kant -->|disinterested judgment grounds| bell
   gautier -->|art for art's sake precedes| wilde
@@ -743,7 +860,8 @@ flowchart LR
   panofsky -->|iconological reading precedes| barthesI
   c_adr -->|image decision recorded for| barthesI
   armstrong -->|theory readings for| lupMiller
-  crit_dionys -->|tests typographic excess with| barnbrook
+  crit_dionys_nietzsche -->|tests typographic excess with| barnbrook
+  crit_dionys_venturi -->|tests typographic excess with| barnbrook
   barnbrook -.->|same expressive moment as| brody
   kandCSA -->|Autonomous mode: inner necessity is the governing criterion of| c_adr
   CRITICS -->|Autonomous mode: judge each move against| kandCSA
@@ -767,3 +885,11 @@ flowchart LR
   classDef scrapped fill:#fecaca,stroke:#b91c1c,stroke-dasharray:4,color:#111827
   classDef visited fill:#ffffff,stroke:#111827,stroke-width:3px,color:#111827
 ```
+
+One seat per authority. A required critic named in the workflow for two or
+three thinkers is that many seats: "Critic: Apollonian Order (Wölfflin,
+Gombrich)" is `crit_apollo_wolfflin` and `crit_apollo_gombrich`. 52 seats,
+50 authorities — Shklovsky sits in Provocateur and in Rupture, Pater in
+Aestheticist and in Musical Structure — and 48 texts, because Positioning is
+Ries and Trout together and Cradle to Cradle is McDonough and Braungart
+together.
