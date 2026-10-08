@@ -2,23 +2,23 @@
 
 Every node of `anchor-graph.md` with its verdict from the run that judged it. A node is either judged here, or it was visited in an earlier run and recorded in `DESIGN-LOG.md`, which is not published; those rows say so.
 
-Verdicts: **APPLY-SITE** (change to `web/`), **APPLY-SKILL** (packaging), **KEEP** (already met, where named), **DECLINE** (does not bear on the artifact, one-line reason), **PASS**/**OBJECT** (panel seat, one authority each), **IN-LOG** (visited in an earlier run, not re-judged here).
+Verdicts: **APPLY-SITE** (change to `web/`), **APPLY-SKILL** (packaging), **KEEP** (already met, where named), **DECLINE** (does not bear on the artifact, one-line reason), **DEFERRED** (a change proposed and not applied yet, with the reason), **PASS**/**OBJECT** (panel seat, one authority each), **IN-LOG** (visited in an earlier run, not re-judged here).
 
-Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
+Counts: 302 nodes, 302 judged in this run, 0 visited in an earlier run and not re-judged.
 
 | Line | Node | Class | Verdict | Reason |
 |---:|---|---|---|---|
 | 6 | `fft` | stance | DECLINE | commerce-versus-meaning manifesto; no printed claim it bears on |
-| 7 | `mauM` | stance | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 8 | `oblique` | stance | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 9 | `sideways` | stance | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 7 | `mauM` | stance | DECLINE | title-only node; no printed claim it bears on |
+| 8 | `oblique` | stance | DECLINE | chance procedure with no printed element |
+| 9 | `sideways` | stance | KEEP | seated as WIT critic with its line-9 link (line 38) |
 | 10 | `young` | stance | DECLINE | ideation method carried by SKILL.md; no page text |
 | 11 | `rubin` | stance | DECLINE | no page element carries the claim |
 | 12 | `kleon` | stance | DECLINE | label and edges name no measurable doctrine |
-| 13 | `munariDA` | stance | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 13 | `munariDA` | stance | KEEP | seated as the WIT pair's Munari; stance printed at the critic |
 | 14 | `munariF` | stance | APPLY-SITE | credit cite for crit_wit_munari: use Fantasia (munariF, line 14), not Design as Art |
 | 15 | `hara` | stance | DECLINE | no page-level claim from the label |
-| 16 | `haraW` | stance | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 16 | `haraW` | stance | KEEP | open paper field in the hero (style.css line 3) keeps emptiness as invitation |
 | 17 | `sagm` | stance | DECLINE | stance entry with no action named |
 | 18 | `sagmB` | stance | DECLINE | no decorative element targeted by the edges |
 | 19 | `scher` | stance | KEEP | type scale: .hero h1 is the largest type on the page (style.css:3) |
@@ -28,46 +28,46 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 23 | `bierut` | stance | DECLINE | no bierut claim printed |
 | 24 | `bantjes` | stance | DECLINE | no ornament claim printed |
 | 27 | `gestalt` | rules | KEEP | proximity met: spec label-value gap 3px within 16px item padding |
-| 28 | `arnheim` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 29 | `kandinsky` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 30 | `dondis` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 28 | `arnheim` | rules | DECLINE | perceptual-form claim printed nowhere; no seat among the 16 shown |
+| 29 | `kandinsky` | rules | KEEP | Kandinsky informs Dondis in graph-art (line 37) |
+| 30 | `dondis` | rules | KEEP | printed as a graph node in graph-art (index.html line 37) |
 | 31 | `wong` | rules | DECLINE | no page or packaging element named |
-| 32 | `vh` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 32 | `vh` | rules | KEEP | hierarchy printed: h1, h2, mono eyebrows (style.css lines 3, 98) |
 | 33 | `crap` | rules | KEEP | contrast 15.41:1 paper on band; repetition in five artifact rows |
 | 34 | `ndb` | rules | DECLINE | label and edge too thin |
 | 35 | `upd` | rules | DECLINE | principles catalogue; no element prints a principle it would change |
-| 36 | `rams` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 36 | `rams` | rules | KEEP | hero prints one headline and one sentence (line 22) |
 | 37 | `mies` | rules | KEEP | Venturi's counter-argument printed as Dionysian seat pair (index.html .seat-art) |
-| 38 | `mb` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 39 | `itstyle` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 40 | `ruder` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 38 | `mb` | rules | KEEP | Müller-Brockmann printed as a target in graph-art (line 37) |
+| 39 | `itstyle` | rules | DECLINE | label names Swiss style with no measurable rule; no Swiss element on the page |
+| 40 | `ruder` | rules | DECLINE | title-only node; no printed claim |
 | 41 | `gerstner` | rules | DECLINE | no grid or programme claim printed |
 | 42 | `samDE` | rules | DECLINE | Samara is printed as samBreak, a different node |
-| 43 | `elamGeo` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 44 | `bring` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 43 | `elamGeo` | rules | DECLINE | no proportion system printed |
+| 44 | `bring` | rules | DECLINE | seating moves the printed 16-of-52 figure; no type-decision claim on the page |
 | 45 | `lupType` | rules | DECLINE | title only; no measurable type change |
 | 46 | `carterDay` | rules | DECLINE | companion link only; no page element |
-| 47 | `tschichold` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 48 | `newtypo` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 49 | `albers` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 47 | `tschichold` | rules | DECLINE | book title with no measurable rule; the page prints no book-form claim |
+| 48 | `newtypo` | rules | DECLINE | title-only node; no printed claim |
+| 49 | `albers` | rules | KEEP | caption set in paper on the band at 15.41:1 (style.css lines 33-36, 97) |
 | 50 | `itten` | rules | DECLINE | label too thin to act on |
 | 51 | `itten7` | rules | KEEP | hero em red on paper about 3.5:1, clearing 3:1 for large display text |
 | 52 | `bauhaus` | rules | DECLINE | no Bauhaus claim on the page |
-| 53 | `wcag` | rules | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 56 | `samBreak` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 57 | `venturi1` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 58 | `venturi2` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 59 | `weingart` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 53 | `wcag` | rules | KEEP | caption contrast measured at 15.41:1 (style.css lines 33-35) |
+| 56 | `samBreak` | break | KEEP | Samara's break within limits printed in the source list and graph-art |
+| 57 | `venturi1` | break | KEEP | seated as Dionysian Excess critic (line 38) |
+| 58 | `venturi2` | break | DECLINE | architectural signage doctrine; page cites venturi1 only |
+| 59 | `weingart` | break | DECLINE | no Weingart seat or text; no type-break claim printed |
 | 60 | `greiman` | break | DECLINE | no element on the page |
-| 61 | `carson` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 61 | `carson` | break | KEEP | the hero's crossing is the break; contrast held (style.css comment, lines 16-35) |
 | 62 | `brody` | break | DECLINE | no Brody text or element |
-| 63 | `emigre` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 63 | `emigre` | break | DECLINE | title-only node; no printed claim |
 | 64 | `mccoy` | break | DECLINE | no element the edges point to |
 | 65 | `fella` | break | DECLINE | title only; no element on the page |
 | 66 | `blauvelt` | break | DECLINE | no page or packaging element named |
 | 67 | `lissitzky` | break | DECLINE | no printed claim it answers; no Lissitzky seat |
-| 68 | `marinetti` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 69 | `tzara` | break | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 68 | `marinetti` | break | KEEP | seated under RUPTURE with its line-68 link (line 38) |
+| 69 | `tzara` | break | DECLINE | no chance procedure or manifesto on the page |
 | 70 | `breton` | break | DECLINE | no juxtaposed element whose doctrine calls for a change |
 | 71 | `moholy` | break | DECLINE | no photo-typography element |
 | 72 | `mcluhan` | break | DECLINE | no medium claim a measurement could test |
@@ -85,7 +85,7 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 86 | `bang` | express | DECLINE | no hero-art change named |
 | 87 | `mcCandless` | express | DECLINE | no quantity chart on the page |
 | 88 | `lupiDear` | express | DECLINE | no chart on the page |
-| 89 | `tufteV` | express | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 89 | `tufteV` | express | DECLINE | no encoded chart on the page; figures are text counts |
 | 90 | `tufteE` | express | KEEP | hierarchy by type: small label, bold name, italic citation |
 | 91 | `tufteB` | express | DECLINE | title only; edge too thin |
 | 94 | `nycta` | system | DECLINE | no identity-system figure on the page |
@@ -100,32 +100,32 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 103 | `kholmatova` | system | DECLINE | no design-system claim printed |
 | 104 | `alexNotes` | system | DECLINE | title only; routes to systems the page does not build |
 | 105 | `alexPattern` | system | DECLINE | no page or packaging change named |
-| 108 | `meggs` | canon | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 109 | `hollisC` | canon | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 108 | `meggs` | canon | KEEP | cited in the source list (line 33) and seated as Historian (line 38) |
+| 109 | `hollisC` | canon | KEEP | seated under HISTORIAN with its line-109 link (line 38) |
 | 110 | `hollisSwiss` | canon | KEEP | counted in the 12 CANON NODES legend (index.html:37) |
 | 111 | `muller` | canon | KEEP | counted in the 12 CANON NODES legend |
 | 112 | `heller100` | canon | KEEP | counted in the 12 CANON NODES legend |
 | 113 | `phaidon` | canon | DECLINE | canon figures already printed with denominators |
 | 114 | `godfrey` | canon | KEEP | canon node counted in the 12 CANON NODES legend |
-| 115 | `blackAnth` | canon | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 115 | `blackAnth` | canon | KEEP | printed in the legend (line 37) and the source list (line 33) |
 | 116 | `armstrong` | canon | DECLINE | anthology node; only the aggregate count is printed |
 | 117 | `lookC` | canon | KEEP | canon node counted in the 12 CANON NODES legend |
-| 118 | `lupMiller` | canon | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 119 | `pater` | canon | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 122 | `c_tufte` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 123 | `c_dd` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 118 | `lupMiller` | canon | KEEP | canon work counted in the graph legend |
+| 119 | `pater` | canon | DECLINE | title-only node; no seated critic on the page |
+| 122 | `c_tufte` | catalog | DECLINE | no chart on the page; legend is text |
+| 123 | `c_dd` | catalog | DECLINE | catalog method with no printed process claim |
 | 124 | `c_prog` | catalog | APPLY-SITE | wrap spec rows in details (disclosure), reducing visible spec rows at load |
-| 125 | `c_morph` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 126 | `c_chest` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 125 | `c_morph` | catalog | DECLINE | option-generation process; no option set printed |
+| 126 | `c_chest` | catalog | KEEP | reasons sit beside each fenced rule (style.css comments, index.html line 31) |
 | 127 | `c_dreyfus` | catalog | DECLINE | no novice-to-expert claim |
 | 128 | `c_bloom` | catalog | DECLINE | no cognitive-tier claim printed |
 | 129 | `c_kano` | catalog | KEEP | controls at min-height 44px; skip link present (index.html:16) |
-| 130 | `c_premortem` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 130 | `c_premortem` | catalog | DEFERRED | adding a 'Could fail' spec pair would change artifact 02's printed rows; not applied |
 | 131 | `c_devil` | catalog | KEEP | four opposed pairs printed (index.html .seat-art) |
-| 132 | `c_spike` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 133 | `c_pugh` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 132 | `c_spike` | catalog | DECLINE | catalog method; internal skill steps not printed |
+| 133 | `c_pugh` | catalog | DECLINE | needs printed alternatives; none printed |
 | 134 | `c_first` | catalog | DECLINE | no first-principles claim printed |
-| 135 | `c_occam` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 135 | `c_occam` | catalog | KEEP | hero carries one headline and one paragraph (line 22) |
 | 136 | `c_kiss` | catalog | DECLINE | no measurable threshold on the page |
 | 137 | `c_socr` | catalog | KEEP | Charge row phrased as a question (index.html:32) |
 | 138 | `c_cynefin` | catalog | DECLINE | no page element or packaging artifact named |
@@ -138,11 +138,11 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 145 | `c_story` | catalog | DECLINE | no narrative structure on the page |
 | 146 | `c_aida` | catalog | KEEP | attention arc in order: hero title, text action, install call to action |
 | 147 | `c_jtbd` | catalog | KEEP | audience job and success test printed (index.html:41) |
-| 148 | `c_pyr` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 149 | `c_inv` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 148 | `c_pyr` | catalog | KEEP | section 02 heading states the claim above five artifact rows (line 28) |
+| 149 | `c_inv` | catalog | DECLINE | label too thin; no page change named |
 | 150 | `c_curse` | catalog | APPLY-SITE | replace bare id crit_erasure_miller and four bare canon ids with surnames |
 | 151 | `c_ssot` | catalog | APPLY-SITE | 52 printed four times and 12 twice: state each once |
-| 152 | `c_adr` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 152 | `c_adr` | catalog | KEEP | decision records print the decision, reason, cost and dependents (line 31) |
 | 153 | `c_madr` | catalog | KEEP | markdown decision-record block present in SKILL.md Step 2a |
 | 154 | `c_five` | catalog | DECLINE | no root-cause claim printed |
 | 155 | `c_dbs` | catalog | KEEP | decision-record rows Move, Measure, Cost, Re-opens printed |
@@ -153,8 +153,8 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 160 | `c_second` | catalog | KEEP | consequences printed as Cost and Re-opens rows (index.html:31) |
 | 161 | `c_ladder` | catalog | DECLINE | elicitation method, not a page property |
 | 162 | `c_cot` | catalog | DECLINE | decision-record content is fixed in SKILL.md |
-| 163 | `c_dod` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 164 | `c_keep` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 163 | `c_dod` | catalog | KEEP | finish checklist states the done rule (lines 32-34) |
+| 164 | `c_keep` | catalog | KEEP | Change row records what changed and the render (line 31) |
 | 165 | `c_bluf` | catalog | KEEP | bottom line opens the hero description |
 | 166 | `c_postel` | catalog | DECLINE | no input-tolerance claim printed |
 | 167 | `c_zpd` | catalog | DECLINE | no measurable page or packaging change |
@@ -170,51 +170,51 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 177 | `c_pdca` | catalog | DECLINE | run loop carried by fixed SKILL.md |
 | 178 | `c_kaizen` | catalog | DECLINE | improvement loop is the skill's process, not a page element |
 | 179 | `c_strangler` | catalog | DECLINE | graph-maintenance rule belongs to fixed SKILL.md |
-| 180 | `c_refactor` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 180 | `c_refactor` | catalog | DECLINE | catalog title; concerns the skill's own record, not a page element |
 | 181 | `c_mutation` | catalog | DECLINE | skill-run method, not page content |
 | 182 | `c_red` | catalog | DECLINE | no test suite on the page |
-| 183 | `c_goodhart` | catalog | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 186 | `schon` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 187 | `cross` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 183 | `c_goodhart` | catalog | DECLINE | no critic score on the page to optimize |
+| 186 | `schon` | reason | KEEP | decision records print what changed and the render that shows it (line 31) |
+| 187 | `cross` | reason | DECLINE | grounds Schön, not a printed element |
 | 188 | `lawson` | reason | DECLINE | title only; no page element |
 | 189 | `simon` | reason | DECLINE | no page or packaging element |
 | 190 | `rittel` | reason | DECLINE | no planning-problem claim printed |
 | 191 | `ibis` | reason | KEEP | each decision recorded with reason and cost (index.html:31) |
 | 192 | `dorst` | reason | DECLINE | framing is not a measurable page decision |
-| 193 | `aristotle` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 193 | `aristotle` | reason | DECLINE | treatise title; no copy change named |
 | 194 | `bonsiepe` | reason | DECLINE | no rhetoric claim a measurement could test |
-| 195 | `buchanan` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 196 | `toulmin` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 195 | `buchanan` | reason | DECLINE | seating a critic moves the printed 16-of-52 and 52-critic figures; convenience is not a reason to seat (amendment 23) |
+| 196 | `toulmin` | reason | KEEP | legend counts link to the record they count from (lines 33, 37) |
 | 197 | `baxandall` | reason | DECLINE | no intent claim to measure |
 | 198 | `panofsky` | reason | DECLINE | not printed; seating it moves the printed equity figures |
-| 199 | `sontag` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 199 | `sontag` | reason | KEEP | seated under DETACHMENT with its line-199 link (line 38) |
 | 200 | `kandCSA` | reason | KEEP | inner necessity stated as the Autonomous criterion (index.html:30) |
 | 201 | `rand3` | reason | DECLINE | no page or packaging change named |
-| 202 | `sullivan` | reason | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 202 | `sullivan` | reason | DECLINE | no form-follows-function claim on the page; seating moves printed figures |
 | 203 | `loos` | reason | APPLY-SITE | drop decorative linear-gradient backgrounds on hero, deliverable section and footer |
 | 204 | `irizarry` | reason | KEEP | objections must name something observable (index.html:32) |
 | 205 | `lupStory` | reason | DECLINE | no story form on the page |
-| 208 | `maya` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 208 | `maya` | welcome | KEEP | Loewy's bound printed beside Samara in graph-art (line 37) |
 | 209 | `hitmakers` | welcome | DECLINE | no Hit Makers claim on the page |
 | 210 | `rogers` | welcome | KEEP | install prerequisites stated; copy-able starter brief present |
-| 211 | `kahneman` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 212 | `shklovsky` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 211 | `kahneman` | welcome | KEEP | hero copy is one plain sentence under the headline (line 22) |
+| 212 | `shklovsky` | welcome | KEEP | seated under RUPTURE with its line-212 link (line 38) |
 | 213 | `heath` | welcome | KEEP | headline plus concrete figure printed in figcaption |
-| 214 | `norman` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 214 | `norman` | welcome | KEEP | script.js unhides the Copy buttons (line 41), a visible signifier |
 | 215 | `normanE` | welcome | DECLINE | levels are edges into MAYA, not page content |
-| 216 | `krug` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 216 | `krug` | welcome | KEEP | numbered install steps give a first-use path (line 41) |
 | 217 | `rocket` | welcome | DECLINE | reader test, not an edit to the files |
-| 218 | `nielsen` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 218 | `nielsen` | welcome | KEEP | copy-status live region announces results (line 41) |
 | 219 | `yablonski` | welcome | KEEP | 44px target sizes met on masthead, nav, CTA and footer links |
 | 220 | `johnson` | welcome | APPLY-SITE | raise seat and spec text from 11px to 12px |
 | 221 | `walter` | welcome | KEEP | motion adds delight; 44px targets and reduced-motion guard (style.css:96) |
-| 222 | `mace` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 223 | `holmes` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 222 | `mace` | welcome | KEEP | skip link, hero alt text and section labels printed (lines 16, 23) |
+| 223 | `holmes` | welcome | DECLINE | no inclusion claim on the page; seating moves the printed roster figure |
 | 224 | `costanza` | welcome | KEEP | equity critique printed in graph-legend and .seat-art |
 | 225 | `curbcut` | welcome | KEEP | skip link, hero alt text and aria-live copy status present |
 | 226 | `kalbag` | welcome | KEEP | muted #52524a on paper computes 6.85:1; reduced motion honoured |
 | 227 | `horton` | welcome | KEEP | skip link, lang and hero alt text present |
-| 228 | `beier` | welcome | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 228 | `beier` | welcome | KEEP | running text at 46ch measure and 1.65 leading (style.css --measure) |
 | 229 | `redish` | welcome | APPLY-SITE | hero description is 28 words over two sentences; cut to 15 or fewer |
 | 230 | `metts` | welcome | DECLINE | label too thin; interface-copy fix already named under c_feynman |
 | 231 | `lynch` | welcome | KEEP | sections numbered 01 to 04; masthead nav reaches #what and #install |
@@ -275,41 +275,41 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 290 | `greenberg` | lens | DECLINE | no formalist critic or Greenberg figure printed |
 | 291 | `eco` | lens | DECLINE | lens text read by a seat not printed on the page |
 | 292 | `papanek` | lens | DECLINE | beneficiary questions belong to critics in fixed SKILL.md |
-| 293 | `positioning` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 293 | `positioning` | lens | DECLINE | Ries and Trout checks; no printed distinctiveness test |
 | 294 | `sharp` | lens | KEEP | one recurring distinctive asset: the asterisk wordmark in masthead and footer |
-| 295 | `sennett` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 296 | `mcdonough` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 297 | `escobar` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 298 | `tanizaki` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 299 | `debord` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 300 | `walters` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 301 | `cairoLie` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 302 | `millerCD` | lens | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 295 | `sennett` | lens | DECLINE | process doctrine; no seat among the 16 shown |
+| 296 | `mcdonough` | lens | DECLINE | no material claim on the page; no eco seat printed |
+| 297 | `escobar` | lens | KEEP | seated against Tanizaki and paired with Samara (lines 37-38) |
+| 298 | `tanizaki` | lens | KEEP | seated as Cross-Cultural critic (line 38) and in the source list (line 33) |
+| 299 | `debord` | lens | DECLINE | no spectacle claim printed; no seat among the 16 shown |
+| 300 | `walters` | lens | KEEP | seated under ERASURE with its line-300 link (line 38) |
+| 301 | `cairoLie` | lens | DECLINE | numbers are text; no encoding that could mislead |
+| 302 | `millerCD` | lens | KEEP | seated as Erasure critic (line 38) and in the critic row (line 32) |
 | 305 | `surowiecki` | panel | KEEP | independent judgments: 16 printed seats each argue from their own text |
-| 306 | `page` | panel | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 306 | `page` | panel | KEEP | four opposed pairs printed as the seat-art block (line 38) |
 | 307 | `debono` | panel | DECLINE | convening method is a SKILL.md concern |
 | 308 | `lerman` | panel | DECLINE | critic feedback process; no page element changes |
-| 311 | `popper` | adapt | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 312 | `kuhn` | adapt | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 311 | `popper` | adapt | KEEP | changed decision re-opens dependents (line 31) |
+| 312 | `kuhn` | adapt | DECLINE | no paradigm claim on the page |
 | 313 | `argyris` | adapt | DECLINE | double-loop revision is a fixed run-time rule; criterion stated in artifact 01 |
 | 314 | `leanries` | adapt | DECLINE | no iteration-loop claim printed |
 | 315 | `taleb` | adapt | KEEP | critique invitation stated in hero description |
 | 316 | `meadows` | adapt | DECLINE | leverage edge runs to double-loop learning in SKILL.md |
-| 319 | `kant` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 320 | `burke` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 319 | `kant` | autonomy | DECLINE | no Kant seat or judgment on the page |
+| 320 | `burke` | autonomy | DECLINE | sublime doctrine bears on no printed claim; no seat among the 16 shown |
 | 321 | `gautier` | autonomy | DECLINE | no page element or packaging artifact named |
 | 322 | `wilde` | autonomy | KEEP | Autonomous stated (index.html:30), the mode Wilde's preface defends |
-| 323 | `waltpater` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 323 | `waltpater` | autonomy | DECLINE | no Autonomous-mode claim printed beyond line 30; seating moves printed figures |
 | 324 | `bell` | autonomy | KEEP | Autonomous mode stated (index.html:30) |
 | 325 | `fry` | autonomy | DECLINE | no Fry claim or seat-level element on the page (run-R0 seat is separate) |
 | 326 | `hanslick` | autonomy | DECLINE | node is not printed on the page; seating it moves the printed equity figures |
-| 327 | `wolfflin` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 328 | `ortega` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 327 | `wolfflin` | autonomy | KEEP | seated in the Apollonian pair (line 38) |
+| 328 | `ortega` | autonomy | DEFERRED | cutting the legend to two lines would drop printed counts the record depends on; not applied |
 | 329 | `malevich` | autonomy | DECLINE | no non-objective text cited on the page |
 | 330 | `mondrian` | autonomy | DECLINE | pure-plastic test belongs to a seat not printed on the page |
-| 331 | `nietzsche` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 332 | `gombrich` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
-| 333 | `poetics` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+| 331 | `nietzsche` | autonomy | KEEP | seated under DIONYSIAN EXCESS with its line-331 link (line 38) |
+| 332 | `gombrich` | autonomy | KEEP | seated under APOLLONIAN ORDER with its line-332 link (line 38) |
+| 333 | `poetics` | autonomy | DECLINE | not seated on the page; no printed claim it tests |
 
 ## WHOLE round R2 (required critics, final state of the hero copy)
 
