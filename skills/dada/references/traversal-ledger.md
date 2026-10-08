@@ -327,3 +327,23 @@ Result: **10 of 10 OBJECT, 0 PASS.** S2 (a WHOLE round with PASS from every requ
 | Horizontal scrollbar | (Gombrich, earlier rounds) | REFUSED by measurement: scrollX stays 0 after a 500px scroll at 1440 and 390; scrollWidth equals clientWidth. |
 
 Open after R2: the sculpture's cut and phone fold (overruled with cost, objection stands), the credit line, and the Holmes seat (refused as unidentified, stays open per the record's rule). S1, S2, S3 and S4 are not met.
+
+## WHOLE round R3 (final desktop sculpture composition)
+
+Same ten required-critic seats as R2, on fresh final-state screenshots (1440x1000, 390x844).
+
+Result: **1 of 10 PASS** (Shklovsky, Rupture), **9 OBJECT**. S2 is not met.
+
+Change made this round: at 1001px and above, the sculpture is 90% of the figure width with an 8% left margin. MAKE / BREAK / REMAKE now reads whole inside the frame at 1001, 1200, 1440 and 1920, with 0% of the image past the viewport. Measured before the change at 98% with no margin: the sculpture rose under "Go further." at the start of the fall (1,484 px crossed, 1.39:1), so the margin is part of the fix. After it: motion preset `total:0` at 320, 390, 768, 1000, 1001, 1200 and 1440; battery clean at 1440, 900 and 390.
+
+| Objection | Seats | Decision |
+|---|---|---|
+| Phone sculpture cut at the right edge and below the fold (390) | Wölfflin, Venturi, Ortega, Marinetti | OVERRULE. The 23% bleed at 390 to 1000 is designed and printed. Moving the object above the headline puts the type below the fold. |
+| Caption band runs to the clip edge at 1440 | Gombrich, Nietzsche | OVERRULE. The source comment records the right-hand caption pushed to the clip so the edge arrests the box that names the image; it is a measured choice. |
+| Footer "MAKE / QUESTION / REVISE" glosses the sculpture | Sontag | OPEN. Not yet decided. |
+| No credited maker or lineage above the fold | Miller, Walters | OPEN. Not yet decided. |
+| 23% figure is not sourced on the fold | Walters | OPEN. The figure is measured in the source; no sourced line is printed yet. |
+
+Shklovsky passes: the BREAK letters read as physical torn cardboard with tape across them, so the slogan is seen as an object rather than as recognised text.
+
+Stop conditions after R3: S1 not met (open items above). S2 not met (1 of 10 PASS). S3 not shown (no two consecutive passing rounds). S4 not logged. The 84 nodes marked IN-LOG were visited in an earlier run and are not re-judged here.

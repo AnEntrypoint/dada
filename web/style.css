@@ -99,6 +99,14 @@
 @media(min-width:1700px){.hero,.masthead,footer{padding-left:max(4.5%,calc((100vw - 1600px)/2));padding-right:max(4.5%,calc((100vw - 1600px)/2))}}
 @media(max-width:900px){.masthead-caption{display:none}.section-heading{gap:5%}.deliverable-section{gap:25px 5%}}
 @media(min-width:1001px) and (max-width:1339px){.hero-art figcaption{margin-right:calc(-20px - 6.7%)}}
+/* Above 1000px the whole sculpture closes inside the frame. At 90% of the figure,
+   set 8% in from its left edge, MAKE / BREAK / REMAKE reads complete at 1001,
+   1200, 1440 and 1920 with 0% of the image past the viewport, and its left edge
+   clears the headline's box at 1200, 1440 and 1920 (the motion preset finds no
+   word crossed at 1001, 1200 or 1440). At 98% and no margin the sculpture rose
+   under "Go further." at the start of the fall: 1,484 px and 1.39:1, so the
+   margin is part of the fix. The 23% bleed stays printed at 390-1000. */
+@media(min-width:1001px){.hero-art img{width:90%;margin-left:8%}}
 /* One relation at every width, and it is the one M25 found at the bottom of the
    page: the object arrives unveiled. Above 1000px the grid is two columns — type,
    then the object — and the closing strip is two stacked lines under the type;
