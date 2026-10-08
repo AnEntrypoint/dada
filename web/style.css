@@ -1,13 +1,106 @@
-:root{--paper:#f2efe6;--ink:#191915;--muted:#5b5b51;--red:#e94127;--red-deep:#b83220;--rule:#191915;--measure:46ch;--step:clamp(47px,6.4vw,94px);--sans:'DM Sans',Arial,sans-serif;--display:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',serif;--serif:'Bodoni Moda',Didot,'Playfair Display',Georgia,serif;--mono:ui-monospace,'Courier New',monospace}
-*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:104px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}a,button{touch-action:manipulation}button{cursor:pointer}[hidden]{display:none!important}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid var(--red-deep);outline-offset:5px}::selection{background:var(--ink);color:var(--paper)}.skip-link{position:absolute;top:-80px;left:20px;background:var(--ink);color:white;padding:12px;z-index:100}.skip-link:focus{top:10px}
-.masthead{position:sticky;top:0;z-index:5;background:#f7f4ee;display:flex;align-items:center;justify-content:space-between;padding:23px 4.5%;border-bottom:1px solid var(--rule);gap:24px}.wordmark{font:600 35px/.9 var(--display);letter-spacing:-2px;white-space:nowrap}.wordmark span{font:11px var(--sans);vertical-align:top;display:inline-block;padding:3px 0 0 6px;letter-spacing:0}.masthead-caption,.eyebrow,.hero-top,.hero-bottom,figcaption,.build-chip{font:11px/1.6 var(--mono);letter-spacing:.035em}.masthead-caption{margin:0;position:absolute;left:50%;transform:translateX(-50%)}nav{display:flex;gap:30px;align-items:center;font-size:12px}nav>a:first-child{padding:9px 0}.pill{display:inline-flex;align-items:center;gap:25px;border-radius:50px;padding:14px 22px;background:var(--ink);color:var(--paper);font-size:12px}.pill:hover{background:var(--red-deep)}.hero{padding:0 4.5%;overflow-x:clip;background:linear-gradient(180deg,#f7f4ee 0%,#eee9dc 100%)}.hero-top{display:flex;justify-content:space-between;align-items:center;margin-top:30px;gap:20px}.build-chip{border:0;padding:7px 0;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}.hero-content{display:grid;grid-template-columns:.68fr 1.32fr;position:relative;padding:52px 0;gap:0}.hero-type,.hero-art{margin:0;align-self:center;position:relative}.eyebrow{margin:0 0 28px}.hero h1{font:400 clamp(55px,7.2vw,122px)/.94 var(--display);letter-spacing:-.065em;margin:0 0 32px -.04em;position:relative;z-index:1}.hero h1 em{font-family:var(--serif);font-size:1em;font-weight:600;font-style:italic}.hero-description{max-width:var(--measure);font-size:15px;line-height:1.65;margin:30px 0}.text-action{display:inline-flex;align-items:center;justify-content:space-between;gap:25px;border-bottom:1px solid;padding:0 0 8px;font-size:13px}.text-action:hover{color:var(--red-deep)}.hero-art{margin:0 0 0 -12%;align-self:center;position:relative}.hero-art picture{display:block;margin-right:-4.5vw}.hero-art img{display:block;width:131%;margin-left:-1%;height:auto}.hero-art figcaption{display:flex;justify-content:space-between;gap:15px;margin-top:16px;font-size:11px}
-.hero-bottom{display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding:22px 0 52px;font:400 clamp(16px,2.2vw,32px)/1.15 var(--display);letter-spacing:-.03em}
-.section-heading{display:grid;grid-template-columns:1.2fr 1fr;gap:9%;align-items:end;margin-bottom:55px}.section-heading h2{font:400 calc(var(--step)*.9)/1 var(--display);letter-spacing:-.055em;margin:0 0 0 -.04em}.deliverable-section h2{font:400 calc(var(--step)*.8)/1 var(--display);letter-spacing:-.055em;margin:0 0 0 -.04em}.section-heading em,.deliverable-section em{font-family:var(--serif);font-weight:600}.section-heading>p{font-size:15px;line-height:1.65;margin:0;max-width:var(--measure)}.deliverable-section{padding:100px 4.5%;display:grid;grid-template-columns:1.4fr 1fr;gap:20px 10%;border-top:1px solid var(--rule);background:linear-gradient(180deg,#eee9dc 0%,#e9e3d4 100%)}.deliverable-section>.eyebrow{grid-column:1/-1}.deliverable-copy{min-width:0}.deliverable-copy p{font-size:16px;line-height:1.65;margin:0 0 20px;max-width:var(--measure)}.deliverable-copy p:nth-child(2){font-size:13px;color:var(--muted)}.deliverable-copy .text-action{margin-top:5px}footer{padding:38px 4.5%;border-top:1px solid var(--rule);background:linear-gradient(180deg,#e9e3d4 0%,#e7e1d1 100%);display:flex;justify-content:space-between;align-items:center;gap:25px}footer p{font:11px/1.6 var(--mono);margin:0}footer>a:last-child{font-size:12px;padding:12px 0}
+:root{--paper:#f2efe6;--ink:#191915;--muted:#52524a;--red:#e94127;--red-deep:#b83220;--rule:#191915;--measure:46ch;--step:clamp(47px,6.4vw,84px);--over:8vw;--cross:122px;--foot:122px;--bleed:calc(var(--over) + var(--cross));--ground:rgba(242,239,230,.54);--sans:'DM Sans',Arial,sans-serif;--display:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',serif;--serif:'Bodoni Moda',Didot,'Playfair Display',Georgia,serif;--mono:ui-monospace,'Courier New',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:104px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}a,button{touch-action:manipulation}button{cursor:pointer}[hidden]{display:none!important}a:focus-visible,button:focus-visible{outline:3px solid var(--red-deep);outline-offset:5px}::selection{background:var(--ink);color:var(--paper)}@keyframes panel-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}[data-panel]:not([hidden]){animation:panel-in .22s ease-out both}.skip-link{position:absolute;top:-80px;left:20px;background:var(--ink);color:white;padding:12px;z-index:100}.skip-link:focus{top:10px}
+.masthead{position:sticky;top:0;z-index:5;background:#f7f4ee;display:flex;align-items:center;justify-content:space-between;padding:23px 4.5%;border-bottom:1px solid var(--rule);gap:24px}.wordmark{font:600 35px/.9 var(--display);letter-spacing:-2px;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}.wordmark span{font:11px var(--sans);vertical-align:top;display:inline-block;padding:3px 0 0 6px;letter-spacing:0}.masthead-caption,.eyebrow,.hero-top,.hero-bottom,figcaption,.build-chip{font:11px/1.6 var(--mono);letter-spacing:.035em}.masthead-caption{margin:0;position:absolute;left:50%;transform:translateX(-50%)}nav{display:flex;gap:30px;align-items:center;font-size:12px}nav>a:first-child{display:inline-flex;align-items:center;min-height:44px}.pill{display:inline-flex;align-items:center;gap:25px;border-radius:50px;padding:14px 22px;min-height:44px;background:var(--ink);color:var(--paper)}.pill:hover{background:var(--red-deep)}.hero{padding:0 4.5%;overflow-x:clip;background:linear-gradient(180deg,#f7f4ee 0%,#eee9dc 100%)}.hero-top{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:20px}.build-chip{border:0;padding:7px 0;min-height:44px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}.hero-content{display:grid;grid-template-columns:.68fr 1.32fr;position:relative;padding:44px 0 16px;gap:0}.hero-type,.hero-art{margin:0;align-self:center;position:relative}.eyebrow{margin:0 0 28px}.hero h1{font:400 calc(var(--step)*1.25)/.94 var(--display);letter-spacing:-.065em;margin:0 0 26px -.04em;position:relative;z-index:1}.hero h1 em{font-family:var(--serif);font-weight:600;font-style:italic;color:var(--red);font-size:.8em}.hero-description{max-width:var(--measure);font-size:15px;line-height:1.65;margin:24px 0}.text-action{display:inline-flex;align-items:flex-end;justify-content:space-between;gap:25px;border-bottom:1px solid;padding:0 0 8px;min-height:44px;font-size:13px}.text-action:hover{color:var(--red-deep)}.hero-art{margin:0 0 0 -12%;align-self:center;position:relative}.hero-art picture{display:block;margin-right:-4.5vw}.hero-art img{display:block;width:131%;margin-left:-1%;height:auto;margin-bottom:calc(-1 * var(--bleed))}.hero-art figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:15px;margin-top:12px;margin-right:calc(-20px - 6.69%);padding-right:23px;position:relative;z-index:1}
+.hero-bottom{grid-column:1/-1;grid-row:2;position:relative;z-index:1;display:flex;justify-content:space-between;border-top:1px solid var(--rule);padding:12px 0 24px;font:400 clamp(16px,2.2vw,32px)/1.15 var(--display);letter-spacing:-.03em}
+/* The artwork bleeds past its figure, so it passes *under* everything that
+   follows it — the two closing sentences and the figure's own caption, measured
+   unplated at 1.02–1.18:1 on the darkest band of the art under any word
+   (1.82–3.68:1 at the mean of those pixels). Rather than
+   amputate the bleed or let the reader pay, every text box it crosses carries
+   its own ground: a veil of paper at 54%, so the sculpture still stands *behind*
+   the word rather than being deleted from behind it, and the word still reads.
+   Measured from pixels at fifteen widths (320→1700): 4.67–15.07:1 at the worst
+   ground pixel under every word in both boxes, against a 4.5:1 need at 11px —
+   and 54% is the floor, not a choice: 52% puts that pixel at 4.29:1 at thirteen
+   of the fifteen widths, so no thinner veil keeps the sentence.
+   What the veil costs the sculpture is stated here in the space this page states
+   contrast in, because the two spaces disagree. In WCAG relative luminance the
+   plates keep 0.628–0.824 of the artwork's p1–p99 spread. In gamma-encoded luma,
+   where the spread was first measured, the same plates keep 0.450 (0.453–0.457
+   with the glyphs made transparent). The veil is 0.46 × art + 0.54 × paper — an
+   affine map — so the second number is the constant of the map and would be true
+   of any image under it, a black one included; the number that says what this
+   shadow keeps is the first. And a ratio of spreads hides a floor: every pixel
+   darker than L 0.048 is lifted to L ≥ 0.2273, and 35.8% of the plated pixels
+   sat beneath that floor unveiled, so those shadows are gone while the mean
+   reports a retention. The ground behind these words spans L 0.0006–0.8521, so
+   no ink reads unveiled at both ends.
+   The right-hand caption is pushed to the clip, so the edge that arrests the
+   image arrests the box that names it while the words stay whole: a figure the
+   reader cannot finish is not a figure. The cut stays where it can be measured
+   — on the image, 23% of whose width lies outside the viewport. */
+/* The one gesture the page cannot state, only perform: the sculpture descending
+   into the band that follows it. It is the same --bleed the layout uses, played
+   as a movement once, from the height where the art stops at the band to the
+   depth where it settles — so the reader sees the overrun before the caption
+   counts it. A transform, so nothing reflows — and because a transform also
+   promotes the image above inline content, the caption's plate had to be given
+   position and z-index to go on painting over it: measured 1.05–1.65:1 under
+   the sculpture before, 4.86–15.08:1 after. */
+@keyframes sink{from{transform:translateY(calc(var(--bleed) * -1))}to{transform:none}}
+.hero-art img{animation:sink .9s cubic-bezier(.22,.7,.24,1) both}
+/* Asked for, and owed: smooth scrolling, the panel entrance and the descent are
+   all motion the reader did not ask for, so a reader who has said they want less
+   of it gets none of it. Measured with --force-prefers-reduced-motion: the
+   panel computes animation-name "none" and html computes scroll-behavior "auto". */
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.hero-bottom span,.hero-art figcaption span{background:var(--ground);box-decoration-break:clone;padding:.06em .24em;margin:0 -.24em}
+.section-heading{display:grid;grid-template-columns:1.2fr 1fr;gap:9%;align-items:end;margin-bottom:55px}.section-heading h2{font:400 calc(var(--step)*.9)/1 var(--display);letter-spacing:-.055em;margin:0 0 0 -.04em}.deliverable-section h2{font:400 calc(var(--step)*.8)/1 var(--display);letter-spacing:-.055em;margin:0 0 0 -.04em}.section-heading em,.deliverable-section em{font-family:var(--serif);font-weight:600}.section-heading>p{font-size:15px;line-height:1.65;margin:0;max-width:var(--measure)}.deliverable-section{padding:100px 4.5%;display:grid;grid-template-columns:1.4fr 1fr;gap:20px 10%;border-top:1px solid var(--rule);background:linear-gradient(180deg,#eee9dc 0%,#e9e3d4 100%)}.deliverable-section>.eyebrow{grid-column:1/-1}.deliverable-copy{min-width:0}.deliverable-copy p{line-height:1.65;margin:0 0 20px;max-width:var(--measure)}.deliverable-copy p:nth-child(2){font-size:13px;color:var(--muted)}.deliverable-copy .text-action{margin-top:5px}footer{padding:38px 4.5%;border-top:1px solid var(--rule);background:linear-gradient(180deg,#e9e3d4 0%,#e7e1d1 100%);display:flex;justify-content:space-between;align-items:center;gap:25px}footer p{font:11px/1.6 var(--mono);margin:0}footer>a:last-child{font-size:12px;padding:12px 0;display:inline-flex;align-items:center;min-height:44px}
 @media(min-width:1700px){.hero,.masthead,footer{padding-left:max(4.5%,calc((100vw - 1600px)/2));padding-right:max(4.5%,calc((100vw - 1600px)/2))}}
 @media(max-width:900px){.masthead-caption{display:none}.section-heading{gap:5%}.deliverable-section{gap:25px 5%}}
-@media(min-width:651px) and (max-width:1000px){.hero-content{grid-template-columns:1fr;gap:32px}.hero-art{width:100%;max-width:none;margin:0}.hero h1{font-size:clamp(55px,9vw,90px)}.hero-description{max-width:500px}.hero-art figcaption{padding:0;font-size:11px}}
-@media(max-width:650px){.masthead{padding:23px 6%;gap:12px}.masthead nav>a:first-child{display:none}.wordmark{font-size:29px}.pill{padding:12px 16px;gap:18px}.hero{padding:0 6%}.hero-top{font-size:11px;align-items:flex-start}.hero-top>span{max-width:155px}.hero-content{grid-template-columns:1fr;padding-top:36px;gap:24px}.hero h1{font-size:clamp(52px,11.5vw,76px)}.hero-art{width:100%;max-width:100%;margin:0}.hero-art picture{margin:0 -6vw}.hero-art figcaption{font-size:11px;padding:0}.hero-bottom{gap:15px}.section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:35px}.section-heading>p{font-size:14px}.deliverable-section{padding:70px 6%;grid-template-columns:1fr;gap:28px}.deliverable-copy p{font-size:15px}footer{padding:30px 6%;display:grid;grid-template-columns:1fr auto;row-gap:20px}footer p{grid-column:1/-1;grid-row:2}footer>a:last-child{grid-column:2;grid-row:1}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media(min-width:1001px) and (max-width:1339px){.hero-art figcaption{margin-right:calc(-20px - 6.7%)}}
+@media(max-width:1499px){.hero-art{display:flex;flex-direction:column}.hero-art figcaption{order:-1;margin-top:0;margin-bottom:12px;justify-content:flex-end}.hero-bottom{grid-column:1;grid-row:2;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:6px}}
+@media(min-width:651px) and (max-width:1000px){:root{--cross:211px}.hero-content{grid-template-columns:1fr 1fr;gap:32px}.hero-art{width:100%;max-width:none;margin:0;align-self:end}.hero-description{max-width:none}.hero-art figcaption{padding:0 23px 0 0;gap:8px;margin-right:calc(-21.58px - 9.89%)}}
+/* One cut, one numeral. The pull that sets the figure flush with the viewport's
+   edge was in vw while the hero's padding beside it is in %: at 320, 6vw is
+   19.2px and 6% is 18.3px, and the 0.9px that survived, with the image's own
+   -1%, opened a second cut on the left — 4.0px at 320, 7.3px at 650 — while the
+   caption below declares one edge. The fraction outside then measured
+   23.88-24.11% at those widths against 22.90-23.05% in the two-column layout,
+   so the numeral this page prints was false at the four widths it is most read
+   at. Both are now in the figure's own percentages — 6% of the hero's content
+   box is 6.818% of the figure's own width, whatever the scrollbar is doing —
+   and 129.7% puts the cut at 22.89-22.90% at 320/390/500/650 with the image
+   flush: measured with a scrollbar's 15px and without it, 22.90% either way. */
+@media(max-width:650px){.masthead{padding:23px 6%;gap:12px}.masthead nav>a:first-child{display:none}.wordmark{font-size:29px}.pill{padding:12px 16px;gap:18px}:root{--over:max(9.3vw,42px)}.hero{padding:0 6%}.hero-top{font-size:11px;align-items:flex-start}.hero-top>span{max-width:155px}.hero-content{grid-template-columns:1fr;padding-top:36px;gap:24px}.hero-art{width:100%;max-width:100%;margin:0}.hero-art picture{margin:0 -6.818%}.hero-art img{margin-left:0;width:129.7%}.hero-art figcaption{padding:0 23px 0 0;margin-right:calc(-6.818% - 20px)}.hero-bottom{gap:5px}.section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:35px}.section-heading>p{font-size:14px}.deliverable-section{padding:70px 6%;grid-template-columns:1fr;gap:28px}.deliverable-copy p{font-size:15px}footer{padding:30px 6%;display:grid;grid-template-columns:1fr auto;row-gap:20px}footer p{grid-column:1/-1;grid-row:2}footer>a:last-child{grid-column:2;grid-row:1}}
+/* The artwork's own file fades out: rows 950–1023 of 1024 carry no ink at
+   alpha ≥ 128. So the overhang that crosses the band and the overhang made of
+   sculpture differ by that tail — 64.6px of the 113.1px the box overhangs at
+   1440 is the artwork's own fade. The ink that actually crosses is the number
+   that matters, and it is positive at every width: over − 0.0723 × artH,
+   measured 3.1px at 768 and 57.1px at 1700.
+   Above 420px, the clearance left above the band's eyebrow is *not* driven by
+   --over at all: padding-top is --over + 32 and the overhang is
+   --over + --cross − foot, so --over cancels and clearance = foot − 90, foot
+   being the block between the artwork's bottom and the band — the caption, the
+   strip and the hero's bottom padding, measured 104–136px — so the clearance is
+   14–46px however large --over grows. --over therefore buys overrun only, never
+   room. Below 420px --cross no longer stands still (see the block above), and
+   there the clearance is foot + 74 − 40.5vw: 9.3px at 420, 49.8px at 320 — and
+   14.9px at 420 with no scrollbar, where the strip sets on one line and foot
+   falls to 84.8px, because the ink's own tail is 26.3px of the overhang. */
+@media(min-width:651px) and (max-width:800px){:root{--over:3.5vw}}
+@media(min-width:801px) and (max-width:1000px){:root{--over:4.2vw}}
+/* The bleed has to scale with the art, not stand still while the art shrinks:
+   at 164px it is 62.2% of the artwork's height at 320, past the 50% this
+   composition is held to, and no fixed value clears both that ceiling and the
+   8% floor on the other side — the floor needs 127.5px of bleed at 320 against
+   a 131.9px ceiling, a 4.4px window, and it closes if the caption and the strip
+   keep their 113.4px. They give back 8px between them, and --cross takes what
+   is left of 40.5vw after --over, so --bleed is still --over + --cross: measured
+   48.5-49.2% of the height and 8.8-18.5% of it hanging past the hero at
+   320/360/375/390/420, with the scrollbar either way. */
+@media(max-width:420px){:root{--cross:calc(40.5vw - var(--over))}.hero-bottom{font-size:18px;gap:3px;padding-bottom:6px}.hero-art figcaption{gap:10px;margin-top:8px;margin-bottom:0;justify-content:flex-end}.hero-art figcaption span:first-child{display:none}}
+/* Below 1001px the caption cannot stand above the object: the sink lifts the
+   object through it, and measured at the top of the descent the plates held
+   8.4% of the object's ink at 950, 21.2% at 768, 20.2% at 651, 12.0% at 320 —
+   the same words that are off the ink at rest. So here the caption stands under
+   the object's painted bottom edge instead: the negative margin moves from the
+   image to the figure, the caption hangs with it, and the object rises away
+   from its own caption rather than through it. Measured 0% of the ink under the
+   plates at rest and 0% at every point of the descent. */
+@media(max-width:1000px){.hero-art{margin-bottom:calc(-1 * var(--bleed))}.hero-art img{margin-bottom:0}.hero-art figcaption{order:0;margin-top:12px;margin-bottom:0}}
+.mark-gloss{display:block;color:var(--muted)}
 .deliverable-copy,.section-heading>p,footer p,.pill,.case-copy>p,.case-status,.brief-art blockquote,.brief-constraints span{overflow-wrap:anywhere}
 .hero .text-action{gap:12px;padding-bottom:6px}
 .process-section ::selection,.install-section ::selection,.case-study ::selection{background:#f2efe6;color:#081831}.pill::selection,.skip-link::selection{background:var(--paper);color:var(--ink)}

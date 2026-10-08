@@ -38,12 +38,18 @@ PROBE = """<!doctype html><meta charset="utf-8"><style>html,body{margin:0}iframe
 <iframe id="f" src=""></iframe>
 <pre id="out">pending</pre>
 <script>
+// window.onerror first, so a probe that dies before it can attach its listener
+// still says why: a snippet containing "%" used to throw inside the (redundant)
+// second decode below, and the run reported a clean "pending" instead of an error.
+window.onerror=function(m){var o=document.getElementById('out');if(o.textContent==='pending')o.textContent='ERR probe: '+m;};
 const q=new URLSearchParams(location.search);
 const W=+q.get('w')||1440,H=+q.get('h')||3000;
 const src=q.get('src')||'';
 const f=document.getElementById('f');f.src=src;
 f.style.width=W+'px';f.style.height=H+'px';
-const code=decodeURIComponent(q.get('js')||'return 1;');
+// q.get() already decodes; decoding again turns any literal "%" in a snippet
+// into a URIError, which used to kill the probe before it ever ran.
+const code=q.get('js')||'return 1;';
 function run(){
  try{
   const win=f.contentWindow,doc=f.contentDocument;
@@ -241,6 +247,28 @@ def extract(dump):
     return html.unescape(m.group(1)).strip()
 
 
+def warn_snippet(code):
+    """Name the three traps that make a snippet lie instead of fail.
+
+    `document` is the probe wrapper, not the page: it is empty of the staged
+    copy, so a snippet that reaches for it finds 0 elements and reports a clean
+    zero rather than an error. `doc` is the page.
+    """
+    if re.search(r'\bdocument\s*\.', code):
+        sys.stderr.write(
+            'warning: snippet uses `document` — the staged page is `doc`. '
+            '`document` is the empty probe wrapper, so this returns 0 elements, '
+            'not an error.\n')
+    if re.search(r'\bquerySelector\(\s*[\'"][^\'"]*,', code):
+        sys.stderr.write(
+            'warning: querySelector() with a comma list returns only the first '
+            'match — use querySelectorAll().\n')
+    if re.search(r'\}\s*\(\s*\)|^\s*\(function', code, re.M):
+        sys.stderr.write(
+            'warning: an IIFE in a snippet throws — the probe wraps the code as '
+            'a function body, so write statements and a return.\n')
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -269,6 +297,9 @@ def main():
             ap.error('unknown preset %r' % a.preset)
         code = None
 
+    if code:
+        warn_snippet(code)
+
     widths = [int(x) for x in a.widths.split(',') if x.strip()]
     height = a.fold or a.h
 
@@ -288,7 +319,8 @@ def main():
             for name in names:
                 c = code if code is not None else PRESETS[name]
                 dump, err = render(probe, os.path.join(site, 'index.html'), c,
-                                   w, height, a.delay, a.nojs)
+                                   w, height, a.delay, a.nojs,
+                                   extra=os.environ.get('CHROME_ARGS', '').split())
                 res = extract(dump)
                 if res.startswith('ERR'):
                     bad = True

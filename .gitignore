@@ -3,3 +3,4 @@
 .agentplug*
 DESIGN-LOG.md
 DESIGN-CARRY-FORWARD.md
+__pycache__/

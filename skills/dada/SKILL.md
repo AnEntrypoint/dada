@@ -58,7 +58,7 @@ Check your tool list, and any tool-search or registry facility you have, for too
 | Render and navigate the anchor graph | A Mermaid or diagram renderer, visualizer, graph database or knowledge-graph tool; a Mermaid parser to validate | Mermaid text in `DESIGN-LOG.md` |
 | Compute the Frontier | A graph query for unvisited in- and out-neighbours of visited nodes | Read the edge lines of the graph and list them by hand |
 | Track workflow state | A todo, plan, task-list or workflow-engine tool: one task per Frontier candidate taken and per panel round | A checklist in `DESIGN-LOG.md` |
-| Run the panel | A sub-agent, task or parallel-agent tool: one agent per critic | Sequential, written one critic at a time |
+| Run the panel | A sub-agent, task or parallel-agent tool: one agent per literary reference (see Step 2c) | Sequential, written one reference at a time |
 | Persist the log | A docs, notes or artifact tool, in addition to `DESIGN-LOG.md` | `DESIGN-LOG.md` only |
 
 Record in the Traversal Plan which tool you used for each job, or "none available". Do not invent tools, and do not claim a tool was used unless you called it.
@@ -96,7 +96,7 @@ Mode field: Reception dial (Autonomous) | Advanced pole and Acceptable pole (Ada
 **2c. Convene the panel** on the rendered artifact.
 
 - Composition: the required critics for your mode, chosen from the CRITICS box.
-- Independence: if you have a sub-agent or task tool, run each critic as its own agent. Otherwise write each critic's report in full before reading the others, with no critic reacting to another's verdict.
+- Independence: if you have a sub-agent or task tool, **one agent per literary reference, not per critic**. Every thinker named in a panel critic — and every text in the LENSES cluster — is instantiated as its own agent, arguing from that author's own doctrine alone: a two- or three-name critic (`Critic: Apollonian Order (Wölfflin, Gombrich)`) convenes Wölfflin and Gombrich as two separate agents. No reference may be merged into a composite voice, dropped, or reduced to a label, and the run is not compliant while a required critic has never sat on the panel. The panel must still meet the mode's composition rule. Otherwise write each reference's report in full before reading the others, with no voice reacting to another's verdict.
 - Evidence rule: every critic must point to something observable in the artifact and name one literature anchor that grounds the judgment. A critic that cites only the plan is invalid; redo it.
 - Run the Critical Response Process in this order: (1) statements of meaning, what the work seems to say; (2) artist questions; (3) neutral questions from critics; (4) opinions, only after the artist permits them.
 - Any critic may pull the Andon. Stop making new moves until its objection is resolved.

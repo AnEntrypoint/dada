@@ -41,6 +41,31 @@ function paint(){
   if(reopen)reopen.disabled=order.indexOf(current)<=0;
 }
 
+// A return-mark with only one of its two terms beside it promises a return it
+// cannot show: at 320 the buttons stack and three of the four arrows point at
+// the next line rather than at the next step. Turn exactly the separators whose
+// following button has wrapped, so the mark still joins the two terms it names
+// — across a row where they sit side by side, down a row where they do not.
+const separators=[...document.querySelectorAll('.case-controls i')];
+function fitSeparators(){
+  // Read phase, from the unturned geometry: clear the last pass first, or the
+  // shift it wrote is measured as part of the slot it is correcting.
+  separators.forEach(sep=>{sep.classList.remove('sep-turned');sep.style.left='0px';});
+  const turned=separators.map((sep,index)=>{
+    const before=stepButtons[index],after=stepButtons[index+1];
+    return !!(before&&after&&Math.abs(after.offsetTop-before.offsetTop)>4);
+  });
+  // Write phase. A mark turned to point down does *not* get moved onto the next
+  // button's centre: its box would then sit on the letters of a tab it does not
+  // join (measured 156px² over "01 BRIEF" at 390, 156px² over "03 MAKE" at 320),
+  // because the shift is horizontal while the mark keeps the previous row's
+  // baseline. Down in its own slot it clears every tab's text — 0px² at
+  // 320/390/500/650 — and still says "this row continues below".
+  separators.forEach((sep,index)=>{
+    if(turned[index])sep.classList.add('sep-turned');
+  });
+}
+
 function showStep(step,move){
   const button=stepButtons.find(item=>item.dataset.step===step);
   const panel=stepPanels.find(item=>item.dataset.panel===step);
@@ -105,7 +130,22 @@ if(caseStudy&&stepButtons.length&&stepPanels.length){
     reopen.hidden=false;
     reopen.addEventListener('click',reopenEarlier);
   }
-  showStep('brief');
+  // The panel the reader is owed first is the one where the objections and their
+  // measurements are printed: evidence before promise.
+  showStep('critique');
+  fitSeparators();
+  addEventListener('resize',fitSeparators);
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitSeparators);
+  // One objection is still undischarged (FORMALIST: the strip still reads as a
+  // fixed sequence to a glancing reader). Carry it as an object, not as a voice:
+  // CRITIQUE is reopened and every later step stale, so the debt is visible in
+  // the strip and spoken in each button's accessible name — which survives the
+  // first click, where a status line stating it once would not.
+  if(order.includes('critique')){
+    reopened.add('critique');
+    order.slice(order.indexOf('critique')+1).forEach(step=>stale.add(step));
+    paint();
+  }
 }
 
 const copyStatus=document.getElementById('copy-status');
