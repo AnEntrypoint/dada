@@ -127,7 +127,7 @@
    the figure is the whole content box: 4.5% of the hero is 4.945% of the figure,
    so the margin and the caption's pull change with the padding they answer to —
    measured 22.90% and a right edge 20.00px past the clip at 651-1000 too. */
-@media(max-width:650px){.masthead{padding:23px 6%;gap:12px}.masthead nav>a:first-child{display:none}.wordmark{font-size:29px}.pill{padding:12px 16px;gap:18px}.hero{padding:0 6%}.hero-top{font-size:11px;align-items:flex-start}.hero-top>span{max-width:155px}.hero-art picture{margin:0 -6.818%}.hero-art figcaption{margin-right:calc(-20px - 6.818%)}.hero-bottom{gap:5px}.section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:35px}.section-heading>p{font-size:14px}.deliverable-section{padding:70px 6%;grid-template-columns:1fr;gap:28px}.deliverable-copy p{font-size:15px}footer{padding:30px 6%;display:grid;grid-template-columns:1fr auto;row-gap:20px}footer p{grid-column:1/-1;grid-row:2}footer>a:last-child{grid-column:2;grid-row:1}}
+@media(max-width:650px){.masthead{padding:23px 6%;gap:12px}.masthead nav{gap:14px}.wordmark{font-size:29px}.pill{padding:12px 16px;gap:18px}.hero{padding:0 6%}.hero-top{font-size:11px;align-items:flex-start}.hero-top>span{max-width:155px}.hero-art picture{margin:0 -6.818%}.hero-art figcaption{margin-right:calc(-20px - 6.818%)}.hero-bottom{gap:5px}.section-heading{grid-template-columns:1fr;gap:24px;margin-bottom:35px}.section-heading>p{font-size:14px}.deliverable-section{padding:70px 6%;grid-template-columns:1fr;gap:28px}.deliverable-copy p{font-size:15px}footer{padding:30px 6%;display:grid;grid-template-columns:1fr auto;row-gap:20px}footer p{grid-column:1/-1;grid-row:2}footer>a:last-child{grid-column:2;grid-row:1}}
 /* The artwork's own file fades out: rows 950–1023 of 1024 carry no ink at
    alpha ≥ 128. So the overhang that crosses the band and the overhang made of
    sculpture differ by that tail — 64.6px of the 113.1px the box overhangs at
@@ -204,7 +204,7 @@
 .artifact-set li>b{grid-column:1;font:11px/1.6 var(--mono);letter-spacing:.04em;color:#ff997e;padding-top:5px}
 .artifact-set h3{grid-column:2;font:500 18px/1.3 var(--sans);letter-spacing:-.015em;margin:0}
 .artifact-set p{grid-column:2;font-size:12px;line-height:1.6;margin:6px 0 0;color:#d5ccbb}
-.spec{grid-column:2;display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font:11px/1.55 var(--mono);color:#d5ccbb;margin-top:12px}
+.spec{grid-column:2;display:grid;grid-template-columns:auto 1fr;gap:3px 14px;font:12px/1.55 var(--mono);color:#d5ccbb;margin-top:12px}
 .spec span:nth-child(odd){color:#ff997e;white-space:nowrap}
 .artifact-note{font:11px/1.6 var(--mono);color:#d5ccbb;margin:0 0 55px}
 .artifact-note a{color:#f2efe6;text-decoration-color:#ff997e}
@@ -212,7 +212,7 @@
 @media(min-width:1100px){.artifact-set li{grid-template-columns:40px 210px 1fr 1fr}.artifact-set h3{grid-column:2}.artifact-set p{grid-column:3;margin:0}.spec{grid-column:4;margin-top:0}}
 .auth{display:block;margin-top:9px}
 .auth b{display:block;font-weight:500}
-.auth em{display:block;font-style:italic;font-size:11px;line-height:1.5;font-family:var(--mono);color:#d5ccbb}
+.auth em{display:block;font-style:italic;font-size:12px;line-height:1.5;font-family:var(--mono);color:#d5ccbb}
 .node-id{font:11px/1.5 var(--mono);letter-spacing:.03em;color:#d4c69f;text-decoration:none;white-space:nowrap}
 .node-id:hover{text-decoration:underline}
 .seat-art{margin-top:55px}
