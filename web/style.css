@@ -1,38 +1,39 @@
-:root{--paper:#f2efe6;--ink:#191915;--muted:#52524a;--red:#e94127;--red-deep:#b83220;--rule:#191915;--band:#081831;--measure:46ch;--step:clamp(47px,6.4vw,84px);--over:8vw;--cross:158px;--fall:.9s;--foot:calc(2.3 * clamp(16px,2.2vw,32px) + 66px);--bleed:calc(var(--over) + var(--cross));--ground:rgba(242,239,230,.54);--sans:'DM Sans',Arial,sans-serif;--display:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',serif;--serif:'Bodoni Moda',Didot,'Playfair Display',Georgia,serif;--mono:ui-monospace,'Courier New',monospace}
+:root{--paper:#f2efe6;--ink:#191915;--muted:#52524a;--red:#e94127;--red-deep:#b83220;--rule:#191915;--band:#081831;--measure:46ch;--step:clamp(47px,6.4vw,84px);--over:8vw;--cross:158px;--fall:.9s;--foot:calc(2.3 * clamp(16px,2.2vw,32px) + 66px);--bleed:calc(var(--over) + var(--cross));--sans:'DM Sans',Arial,sans-serif;--display:Georgia,'Iowan Old Style','Palatino Linotype',Palatino,'Book Antiqua',serif;--serif:'Bodoni Moda',Didot,'Playfair Display',Georgia,serif;--mono:ui-monospace,'Courier New',monospace}
 *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:104px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button{font:inherit}a,button{touch-action:manipulation}button{cursor:pointer}[hidden]{display:none!important}a:focus-visible,button:focus-visible{outline:3px solid var(--red-deep);outline-offset:5px}::selection{background:var(--ink);color:var(--paper)}.skip-link{position:absolute;top:-80px;left:20px;background:var(--ink);color:white;padding:12px;z-index:100}.skip-link:focus{top:10px}
 .masthead{position:sticky;top:0;z-index:5;background:#f7f4ee;display:flex;align-items:center;justify-content:space-between;padding:23px 4.5%;border-bottom:1px solid var(--rule);gap:24px}.wordmark{font:600 35px/.9 var(--display);letter-spacing:-2px;white-space:nowrap;display:inline-flex;align-items:center;min-height:44px}.wordmark span{font:11px var(--sans);vertical-align:top;display:inline-block;padding:3px 0 0 6px;letter-spacing:0}.masthead-caption,.eyebrow,.hero-top,.hero-bottom,figcaption,.build-chip{font:11px/1.6 var(--mono);letter-spacing:.035em}.masthead-caption{margin:0;position:absolute;left:50%;transform:translateX(-50%)}nav{display:flex;gap:30px;align-items:center;font-size:12px}nav>a:first-child{display:inline-flex;align-items:center;min-height:44px}.pill{display:inline-flex;align-items:center;gap:25px;border-radius:50px;padding:14px 22px;min-height:44px;background:var(--ink);color:var(--paper)}.pill:hover{background:var(--red-deep)}.hero{padding:0 4.5%;overflow-x:clip;background:linear-gradient(180deg,#f7f4ee 0%,#eee9dc 100%)}.hero-top{display:flex;justify-content:space-between;align-items:center;margin-top:24px;gap:20px}.build-chip{border:0;padding:7px 0;min-height:44px;display:inline-flex;align-items:center;gap:8px;white-space:nowrap}.hero-content{display:grid;grid-template-columns:.68fr 1.32fr;position:relative;padding:44px 0 16px;gap:0}.hero-type,.hero-art{margin:0;align-self:center;position:relative}.eyebrow{margin:0 0 28px}.hero h1{font:400 calc(var(--step)*1.25)/.94 var(--display);letter-spacing:-.065em;margin:0 0 26px -.04em;position:relative;z-index:1}.hero h1 em{font-family:var(--serif);font-weight:600;font-style:italic;color:var(--red);font-size:.8em}.hero-description{max-width:var(--measure);font-size:15px;line-height:1.65;margin:24px 0}.text-action{display:inline-flex;align-items:flex-end;justify-content:space-between;gap:25px;border-bottom:1px solid;padding:0 0 8px;min-height:44px;font-size:13px}.text-action:hover{color:var(--red-deep)}.hero-art{margin:0 0 calc(-1 * var(--bleed)) -12%;align-self:end;position:relative}.hero-art picture{display:block;margin-right:-4.5vw}.hero-art img{display:block;width:131%;margin-left:-1%;height:auto}.hero-art figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:15px;margin-top:12px;margin-right:calc(-20px - 6.69%);padding-right:23px;position:relative;z-index:1}
 .hero-bottom{grid-column:1;grid-row:2;position:relative;z-index:1;display:flex;flex-direction:column;align-items:flex-start;justify-content:flex-start;gap:6px;border-top:1px solid var(--rule);padding:12px 0 24px;font:400 clamp(16px,2.2vw,32px)/1.15 var(--display);letter-spacing:-.03em}
 /* One gesture, one cost, and the cost is carried by the movement alone. The
    object hangs past its figure into the band; at ≤1000 the closing strip stands
-   in its way, so for the length of the descent the sculpture passes *under*
-   those two sentences — measured 0.27% of its ink at 1000 rising to 4.07% at 320
-   at the top of the descent, against 0.00% at rest at every width and 0.00% in
-   motion above 1000px, where the strip stands beside the object and never
-   crosses it. Those two sentences are the only plated words left on the page, and
-   the plate is measured at the instant it is needed: at the top of the descent
-   the darkest painted pixel of the artwork under each of them reads 0.85-4.04:1
-   unveiled at the eight widths below 1001px, and 4.61-8.78:1 plated, against a
-   4.5:1 need at 11px — so the sentences carry their
-   own ground while the object is arriving: a veil of paper at 54%, and the
-   sculpture still stands *behind* the word rather than being deleted from behind
-   it. And 54% is the floor, not a choice: at 52% the worst of those pixels falls
-   to 4.32/4.34/4.45:1 at 420/390/320, so no thinner veil keeps the sentence.
-   What the veil costs the sculpture is stated here in the space this page states
-   contrast in, because the two spaces disagree. On the artwork's own row 500 the
-   plates keep 0.795 of its p1-p99 spread in WCAG relative luminance, and 0.460 of
-   it in gamma-encoded luma, where the spread was first measured. The veil is
-   0.46 × art + 0.54 × paper — an affine map — so the second number is the
-   constant of the map and would be true of any image under it, a black one
-   included; the number that says what this shadow keeps is the first. And a ratio of spreads hides a floor: every pixel
-   darker than L 0.048 is lifted to L ≥ 0.2198, and on the artwork's own row 500
-   352 of its 1,062 opaque pixels — 33.1% — sat beneath that floor unveiled, so
-   those shadows are gone while the mean reports a retention. The artwork these words cross spans L 0.000000 to 0.8446
-   in the file's own row 500 — 17.89:1 — so no ink reads unveiled at both ends.
-   The caption is the other box that once carried this plate, and it no longer
-   needs one: it hangs off the object's painted bottom edge, inside the band, and
-   is set in paper there — 15.41:1 for #f2efe6 on #081831 against the 5.20:1 the
-   plate gave it over the same ground. A veil on a word that stands on no ink is
-   not a cost paid, it is a decoration.
+   above it, so for the length of the descent the sculpture rises past those two
+   sentences — measured 0.27% of its ink at 1000 rising to 4.07% at 320 at the
+   top of the descent, against 0.00% at rest at every width. Above 1000px the
+   record once printed the same 0.00% in motion, and that was false: the object
+   crosses the description there (2,305-4,451 px of its ink at 1001-1699,
+   1.00-1.45:1), the edition chip at every width above 1000 (2,525-5,384 px,
+   1.00-1.05:1) and the strip's second sentence on the way down (59-295 px,
+   1.41-1.61:1) — three crossings, none of them ever plated, and 0.00% at rest
+   at all of them.
+   A veil of paper at 54% stood there once for the whole life of the page, and it
+   is gone. What it cost is stated in the space this page states contrast in,
+   because the two spaces disagree: on the artwork's own row 500 the plates kept
+   0.795 of its p1-p99 spread in WCAG relative luminance and 0.460 of it in
+   gamma-encoded luma, and a ratio of spreads hides a floor — every pixel darker
+   than L 0.048 was lifted to L ≥ 0.2198, and 352 of that row's 1,062 opaque
+   pixels — 33.1% — sat beneath that floor unveiled, so a third of those shadows
+   were gone while the mean reported a retention. The artwork those words cross
+   spans L 0.000000 to 0.8446 in the file's own row 500 — 17.89:1 — so no ink
+   reads unveiled at both ends. What it bought was smaller than what it cost:
+   the veil was needed for the 45-75ms of a 500-600ms fall in which the object's
+   ink is actually under the sentences — 50-62ms at 320, 62-75ms at 390, 45-60ms
+   at 650 — and for 0ms at 768, 900 and 1000, where the object's own transparent
+   head is what crosses and the worst pixel those sentences ever read is already
+   ≥ 4.5:1. What takes its place costs the sculpture nothing: the word takes the
+   later beat (below), so 0 of the artwork's pixels is lightened at any width,
+   and the sentence is read on paper instead of on the object at 1.03-3.66:1.
+   The caption needs no plate and never did: it hangs off the object's painted
+   bottom edge, inside the band, and is set in paper there — 15.41:1 for
+   #f2efe6 on #081831 against the 5.20:1 a plate gave it over the same ground. A
+   veil on a word that stands on no ink is not a cost paid, it is a decoration.
    The right-hand caption is pushed to the clip, so the edge that arrests the
    image arrests the box that names it while the words stay whole: a figure the
    reader cannot finish is not a figure. The cut stays where it can be measured
@@ -41,12 +42,43 @@
    into the band that follows it. It is the same --bleed the layout uses, played
    as a movement once, from the height where the art stops at the band to the
    depth where it settles — so the reader sees the overrun before the caption
-   counts it. A transform, so nothing reflows — and because a transform also
-   promotes the image above inline content, the strip's plate had to be given
-   position and z-index to go on painting over it: measured 1.05–1.65:1 under
-   the sculpture before, 4.86–15.08:1 after. */
+   counts it. A transform, so nothing reflows. Of the words it passes, two are
+   painted above it — the headline, which reads 15.08:1 against whatever the
+   object puts behind it at every fortieth of the fall, and the closing strip,
+   which read 1.03-3.66:1 — and two are painted below it and were simply covered:
+   the description, worst 1.12:1 at 1280, and the edition chip, worst 1.01:1 at
+   1440. All four keep their place; none is carried over the object any more, and
+   the three that cannot be read while it passes now wait for it instead. */
 @keyframes sink{from{transform:translateY(calc(var(--bleed) * -1))}to{transform:none}}
 .hero-art img{animation:sink var(--fall) cubic-bezier(.22,.7,.24,1) both}
+/* What the object passes, it passes: nothing is painted over it. Where a word
+   and the sculpture want the same place, the word takes the later beat — held
+   at opacity 0 for a fraction of the fall, then stepped in. Every fraction is
+   measured, per word, from the artwork's own composited pixels under it at every
+   fortieth of the descent, and the crossings are not one crossing: the strip's
+   first sentence is crossed for the first 7.5-12.5% of the fall at ≤650 and its
+   second for the first 12.5-20% — 1.00-3.57:1, 186-1,432 px of it — and only
+   its second line at 768 and 1000, at 3.17-3.21:1; the CTA for one frame at 390,
+   at 3.29:1 and 59 px. Above 1000 the order turns over: the object reaches the
+   strip from below, so that second line is crossed at the END of the fall —
+   20-35% at 1.41-1.61:1 — while the description (1.00-1.45:1, 2,305-4,451 px)
+   and the edition chip (1.00-1.05:1, 2,525-5,384 px at every width above 1000)
+   are crossed at the start. So five beats: 5% for the CTA, 17.5% for the
+   description at 1001-1699 and the chip at 1001-1150, 22.5% for the strip below
+   1001, 30% for the chip above it, and 40% for the strip at 1001-1699, where the
+   sculpture arrives last. A reader who has asked for less motion gets neither
+   the descent nor any beat: all of it is animation, and with it off the object
+   stands where it settles and nothing crosses anything. */
+@keyframes beat{from{opacity:0}17.5%{opacity:1}to{opacity:1}}
+@keyframes beat-mid{from{opacity:0}22.5%{opacity:1}to{opacity:1}}
+@keyframes beat-long{from{opacity:0}30%{opacity:1}to{opacity:1}}
+@keyframes beat-late{from{opacity:0}40%{opacity:1}to{opacity:1}}
+@keyframes beat-brief{from{opacity:0}5%{opacity:1}to{opacity:1}}
+@media(max-width:650px){.hero .text-action{animation:beat-brief var(--fall) step-end both}}
+@media(max-width:1000px){.hero-bottom span{animation:beat-mid var(--fall) step-end both}}
+@media(min-width:1001px) and (max-width:1699px){.hero-bottom span:nth-child(2){animation:beat-late var(--fall) step-end both}.hero-description{animation:beat var(--fall) step-end both}}
+@media(min-width:1001px) and (max-width:1150px){.build-chip{animation:beat var(--fall) step-end both}}
+@media(min-width:1151px){.build-chip{animation:beat-long var(--fall) step-end both}}
 /* A movement is measured in the body it moves, not in the clock: at one duration
    the object fell 287px/s at 1700 and 144px/s at 320 — twice as fast on the
    widest screen, half as fast on the smallest, so the same gesture arrived as
@@ -73,10 +105,13 @@
    below it the grid is one column and the strip stands above the object. In both,
    the caption hangs off the object's painted bottom edge, so it stands inside the
    dark band and is set in paper there: measured 15.41:1 for #f2efe6 on #081831
-   against the 5.20:1 the plate gave it over the same ground. The plate is now
-   spent on the one moment a word does cross the sculpture — the strip's two
-   sentences at ≤1000, while the object is still arriving. */
-@media(max-width:1000px){:root{--over:max(9.3vw,42px);--cross:122px}.hero-content{grid-template-columns:1fr;padding-top:36px;gap:24px}.hero-art{width:100%;max-width:100%;margin-left:0}.hero-art picture{margin:0 -4.945%}.hero-art img{margin-left:0;width:129.7%}.hero-art figcaption{padding:0 23px 0 0;margin-right:calc(-20px - 4.945%)}.hero-bottom span{background:var(--ground)}}
+   against the 5.20:1 the plate gave it over the same ground. The object passes
+   words in both arrangements on its way down — the strip's two sentences at
+   ≤650, the description and the edition chip above 1000 — and not one of them
+   is carried over it now: each is held until the object has gone past and then
+   stepped in, at a fraction of the fall measured from the artwork's own pixels
+   under it. No plated word is left on the page. */
+@media(max-width:1000px){:root{--over:max(9.3vw,42px);--cross:122px}.hero-content{grid-template-columns:1fr;padding-top:36px;gap:24px}.hero-art{width:100%;max-width:100%;margin-left:0}.hero-art picture{margin:0 -4.945%}.hero-art img{margin-left:0;width:129.7%}.hero-art figcaption{padding:0 23px 0 0;margin-right:calc(-20px - 4.945%)}}
 /* One cut, one numeral. The pull that sets the figure flush with the viewport's
    edge was in vw while the hero's padding beside it is in %: at 320, 6vw is
    19.2px and 6% is 18.3px, and the 0.9px that survived, with the image's own
