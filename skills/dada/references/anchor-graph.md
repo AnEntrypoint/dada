@@ -256,6 +256,7 @@ flowchart LR
     crit_apollo["Critic: Apollonian Order (Wölfflin, Gombrich)"]:::critic
     crit_dionys["Critic: Dionysian Excess (Nietzsche, Venturi)"]:::critic
     crit_detach["Critic: Detachment (Ortega y Gasset, Sontag)"]:::critic
+    crit_erasure["Critic: Erasure (Miller, Walters)"]:::critic
   end
   subgraph LENSES["Lenses: Each Critic's Own Literature"]
     greenberg["Art and Culture (Clement Greenberg)"]:::lens
@@ -270,6 +271,7 @@ flowchart LR
     debord["The Society of the Spectacle (Guy Debord)"]:::lens
     walters["Black, Brown + Latinx Design Educators (Kelly Walters)"]:::lens
     cairoLie["How Charts Lie (Alberto Cairo)"]:::lens
+    millerCD["Black Designers: Missing in Action (Cheryl D. Miller)"]:::lens
   end
   subgraph PANEL["Panel Method: Convening Diverse Judges"]
     surowiecki["The Wisdom of Crowds (James Surowiecki)"]:::panel
@@ -614,6 +616,10 @@ flowchart LR
   crit_plur -->|questions cultural default with| tanizaki
   crit_plur -->|questions the Western canon with| walters
   crit_plur -->|checks restraint with| hara
+  crit_erasure -->|asks who the record omits with| millerCD
+  crit_erasure -->|asks what the canon leaves out with| walters
+  crit_erasure -.->|charges the roster of| crit_plur
+  millerCD -.->|charges the omission of| meggs
   crit_prov -->|attacks the spectacle with| debord
   crit_prov -->|makes strange with| shklovsky
   crit_prov -->|answers orthodoxy with| venturi2
