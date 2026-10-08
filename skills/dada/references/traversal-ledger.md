@@ -347,3 +347,9 @@ Change made this round: at 1001px and above, the sculpture is 90% of the figure 
 Shklovsky passes: the BREAK letters read as physical torn cardboard with tape across them, so the slogan is seen as an object rather than as recognised text.
 
 Stop conditions after R3: S1 not met (open items above). S2 not met (1 of 10 PASS). S3 not shown (no two consecutive passing rounds). S4 not logged. The 84 nodes marked IN-LOG were visited in an earlier run and are not re-judged here.
+
+## Visitor copy pass (after R3)
+
+The visible copy was rewritten for a first-time visitor: the skill's working terms (Frontier, Andon, REOPENED, Seat, Mode-as-jargon, the `crit_…` and bare node ids) are gone from the visible text, and the node-id links now read "line N" with the same addresses. "UP TO 23% OF THE IMAGE IS OUTSIDE" is no longer printed on the page: at 1440 nothing is outside the frame after the R3 change, so the caption now reads "THE OBJECT REACHES DOWN INTO THE BAND", which is true at every width. The measured figures stay in this ledger and in the stylesheet comments.
+
+Checks at the final state: battery clean at 1440, 900 and 390; motion preset `total:0` at 390, 1000 and 1440.
