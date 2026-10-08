@@ -134,6 +134,50 @@
    this page once ran side by side — the wide one with its words on the art and
    the narrow one without — are now one. */
 .mark-gloss{display:block;color:var(--muted)}
-.deliverable-copy,.section-heading>p,footer p,.pill,.case-copy>p,.case-status,.brief-art blockquote,.brief-constraints span{overflow-wrap:anywhere}
+.deliverable-copy,.section-heading>p,footer p,.pill{overflow-wrap:anywhere}
 .hero .text-action{gap:12px;padding-bottom:6px}
-.process-section ::selection,.install-section ::selection,.case-study ::selection{background:#f2efe6;color:#081831}.pill::selection,.skip-link::selection{background:var(--paper);color:var(--ink)}
+.showcase-section ::selection,.install-section ::selection{background:#f2efe6;color:#081831}.pill::selection,.skip-link::selection{background:var(--paper);color:var(--ink)}
+.showcase-section{padding:calc(var(--bleed) - var(--foot) + 32px) 4.5% 100px;background:var(--band);color:#f2efe6}
+.showcase-section :focus-visible{outline-color:#ffd49c}
+.showcase-section h2 em{color:#ffb398}
+.case-kicker,.art-label{font:11px/1.6 var(--mono);letter-spacing:.035em;color:#d4c69f;margin:0 0 30px}
+.graph-art{padding:30px 20px;border:1px solid #748db2;background:#152f53}
+.graph-art>.art-label{margin-bottom:32px}
+.graph-row{display:grid;grid-template-columns:1fr 100px 1fr;align-items:center;margin:30px 0;gap:8px}
+.graph-row>div{border:1px solid #748db2;padding:16px 12px;min-height:90px;display:flex;flex-direction:column;justify-content:center}
+.graph-row>div small{font:11px/1.5 var(--mono);color:#d8dfed;margin-bottom:6px}
+.graph-row>div b{font-weight:500}
+.graph-row>span{font:11px/1.5 var(--mono);text-align:center;color:#ff997e}
+.graph-row>span i{font-style:normal;display:inline-block}
+.graph-row .dotted-edge{border-bottom:1px dashed #ff997e;padding-bottom:9px}
+.graph-legend{font:11px/1.6 var(--mono);color:#d5ccbb;margin:35px 0 0}
+.showcase-link{font-size:12px;display:inline-block;border-bottom:1px solid;padding-bottom:8px;margin-top:18px;color:#d4c69f}
+.graph-row>div i.native{font-style:normal;display:block;font:11px/1.5 var(--mono);color:#d8dfed;margin-top:7px}
+/* The four seats printed below are opposed in pairs, and the stand-off is not
+   paid out of the type: the mark stands outside the row's module, so the two
+   authority boxes in a pair measure equal at every width. */
+.graph-row.counterpoint{position:relative}
+.graph-row.counterpoint::before{content:"";position:absolute;top:0;bottom:0;left:-16px;border-left:2px solid #ff997e}
+/* Five artifacts. Five does not divide by two or by three, so the set is not
+   a grid of cards: it is a ledger — a rule above, a rule between, and one row
+   per artifact, with the numeral in its own column so the five read as a count
+   and not as tiles. Measured: 1 orphan cell at 650 and 1000 under a 3- and
+   2-column card grid, and 197px cards at 1151 where five go in a row; the
+   ledger has neither, at any width. */
+.artifact-set{list-style:none;margin:0 0 55px;padding:0;border-top:1px solid #546883}
+.artifact-set li{display:grid;grid-template-columns:40px 1fr;gap:4px 16px;border-bottom:1px solid #546883;padding:16px 0}
+.artifact-set li>b{grid-column:1;font:11px/1.6 var(--mono);letter-spacing:.04em;color:#ff997e;padding-top:5px}
+.artifact-set h3{grid-column:2;font:500 18px/1.3 var(--sans);letter-spacing:-.015em;margin:0}
+.artifact-set p{grid-column:2;font-size:12px;line-height:1.6;margin:6px 0 0;color:#d5ccbb}
+@media(min-width:900px){.artifact-set li{grid-template-columns:40px 240px 1fr;gap:20px;align-items:start}.artifact-set p{grid-column:3;margin:0}}
+.auth{display:block;margin-top:9px}
+.auth b{display:block;font-weight:500}
+.auth em{display:block;font-style:italic;font-size:11px;line-height:1.5;font-family:var(--mono);color:#d5ccbb}
+.seat-art{margin-top:55px}
+.range-uses{font:11px/1.6 var(--mono);letter-spacing:.035em;border-top:1px solid var(--rule);padding-top:14px;color:var(--muted)}
+@media(max-width:1000px){:root{--foot:16px}}
+@media(max-width:1150px){.graph-row{grid-template-columns:1fr;gap:14px}}
+@media(max-width:1000px){.graph-row>div{padding:12px 8px}.graph-row>div b{font-size:12px}.graph-row>div small{overflow-wrap:anywhere}}
+@media(max-width:720px){.showcase-section{padding-bottom:75px}.graph-art{padding:24px 18px}.graph-row{grid-template-columns:1fr;gap:12px;margin:24px 0}.graph-row>div b{font-size:13px;overflow-wrap:anywhere}.graph-row>div small{font-size:11px;overflow-wrap:anywhere}}
+@media(max-width:650px){.showcase-section{padding-left:6%;padding-right:6%}}
+@media(max-width:420px){.graph-row{grid-template-columns:1fr;gap:14px}.graph-row>div{padding:16px;min-height:85px}.graph-row>span i{transform:rotate(90deg);margin-left:8px}}

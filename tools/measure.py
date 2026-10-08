@@ -14,7 +14,7 @@ in a temp dir, so the published files are never edited to take a measurement.
     python3 tools/measure.py --shot /tmp/fold.png --widths 1440 --fold 900
     python3 tools/measure.py --shot /tmp/no-h1.png --widths 1440 --fold 900 \
             --expr 'doc.querySelector(".hero h1").style.visibility="hidden"'
-    python3 tools/measure.py --preset contrast --widths 390 --tab ideas
+    python3 tools/measure.py --preset state --widths 390
 
 The snippet runs with (doc, win, W, H) in scope. Return anything
 JSON-serialisable, or a string for raw output.
@@ -23,10 +23,9 @@ Three readings that cost a round to learn: `--fold N` is the *iframe height*,
 so it is the viewport `win.innerHeight` sees — omit it and every width reports
 3,000px tall, and any "above the fold" figure is fiction. And the `contrast`
 preset's `n` is the number of **failing** rows, so `n:0` with an empty `fails`
-is a clean run, not an unrun one. And the case panels are hidden unless their
-tab is chosen, so anything inside one — `.graph-art`, `.critique-art` —
-measures 0×0 with no error to warn you: pass `--tab ideas` (or `brief`, `make`,
-`critique`, `refine`) and the tab is clicked before the snippet runs.
+is a clean run, not an unrun one. And the `state` preset drives the install
+section's copy buttons, not a tab strip: it reports how many of them are still
+`hidden` once the script has run, so `hidden:0` is both buttons revealed.
 """
 
 import argparse
@@ -177,26 +176,20 @@ return {w:W, lang:doc.documentElement.lang||null, title:doc.title,
 """
 
 P_STATE = r"""
-const btns=[...doc.querySelectorAll('[data-step]')];
-const status=doc.getElementById('case-status');
-const panels=[...doc.querySelectorAll('[data-panel]')];
-if(!btns.length) return {w:W, err:'no [data-step] buttons'};
+const btns=[...doc.querySelectorAll('[data-copy]')];
+const status=doc.getElementById('copy-status');
+if(!btns.length) return {w:W, err:'no [data-copy] buttons'};
 const out=[];
 function snap(tag){
-  return {at:tag,
-    tabs:btns.map(b=>b.dataset.step+':'+(b.getAttribute('aria-selected')==='true'?'SEL':'')
-      +(b.hasAttribute('data-stale')?'+stale':'')+(b.hasAttribute('data-rerun')?'+rerun':'')
-      +(b.hasAttribute('data-reopened')?'+reopened':'')).join(' '),
-    shown:panels.filter(p=>p.hidden===false||getComputedStyle(p).display!=='none').map(p=>p.dataset.panel).join(','),
+  return {at:tag, hidden:btns.filter(b=>b.hidden).length,
+    labels:btns.map(b=>b.textContent.trim()).join(' | '),
     status:(status?status.textContent.trim():'').slice(0,120)};
 }
 out.push(snap('load'));
-btns.forEach(b=>{b.click();out.push(snap('click'+b.dataset.step));});
-const reopen=doc.getElementById('reopen')||doc.querySelector('[data-reopen]')||[...doc.querySelectorAll('button')].find(b=>/reopen/i.test(b.textContent));
-if(reopen){reopen.click();out.push(snap('reopen'));}
-if(btns.length){btns[btns.length-1].click();out.push(snap('revisit-last'));}
-const grammar=out.map(o=>o.status).filter(s=>s).map(s=>({s:s,bad:/\b1 (steps|steps that depend)\b|\b1 step(s)? that depend\b/.test(s)})).filter(o=>o.bad);
-return {w:W, steps:out, grammarBugs:grammar, focusable:btns.filter(b=>b.tabIndex===0).map(b=>b.dataset.step)};
+btns.forEach(b=>{b.click();out.push(snap('click'+b.dataset.copy));});
+const grammar=out.map(o=>o.status).filter(Boolean)
+  .map(s=>({s:s,bad:/\b1 (steps|items|characters)\b/.test(s)})).filter(o=>o.bad);
+return {w:W, steps:out, grammarBugs:grammar, focusable:btns.filter(b=>!b.hidden).length};
 """
 
 PRESETS = {
