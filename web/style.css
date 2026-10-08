@@ -231,3 +231,7 @@
 @media(max-width:720px){.showcase-section{padding-bottom:75px}.graph-art{padding:24px 18px}.graph-row{grid-template-columns:1fr;gap:12px;margin:24px 0}.graph-row>div b{font-size:13px;overflow-wrap:anywhere}.graph-row>div small{font-size:11px;overflow-wrap:anywhere}}
 @media(max-width:650px){.showcase-section{padding-left:6%;padding-right:6%}}
 @media(max-width:420px){.graph-row{grid-template-columns:1fr;gap:14px}.graph-row>div{padding:16px;min-height:85px}.graph-row>span i{transform:rotate(90deg);margin-left:8px}}
+/* The ledger cards are a grid whose column must be allowed to shrink on a phone:
+   the spec labels wrap, and the card takes the width the screen has. Placed last
+   so it overrides the card rules above it at the same specificity. */
+@media(max-width:420px){.spec span:nth-child(odd){white-space:normal}.artifact-set li{grid-template-columns:40px minmax(0,1fr)}.spec{grid-template-columns:minmax(0,1fr);gap:0 0}.spec span{margin-bottom:0}}

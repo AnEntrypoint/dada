@@ -353,3 +353,14 @@ Stop conditions after R3: S1 not met (open items above). S2 not met (1 of 10 PAS
 The visible copy was rewritten for a first-time visitor: the skill's working terms (Frontier, Andon, REOPENED, Seat, Mode-as-jargon, the `crit_…` and bare node ids) are gone from the visible text, and the node-id links now read "line N" with the same addresses. "UP TO 23% OF THE IMAGE IS OUTSIDE" is no longer printed on the page: at 1440 nothing is outside the frame after the R3 change, so the caption now reads "THE OBJECT REACHES DOWN INTO THE BAND", which is true at every width. The measured figures stay in this ledger and in the stylesheet comments.
 
 Checks at the final state: battery clean at 1440, 900 and 390; motion preset `total:0` at 390, 1000 and 1440.
+
+## Comprehension check (fresh readers, not visitors)
+
+Fresh readers who know nothing about the project read full-page screenshots and answered six questions: what it is, who it is for, what they would get, what to do first, which words confused them, and the story. This is a comprehension check with readers, not a test with real visitors.
+
+- Round 1 (three readers, desktop, phone and a designer): all three could say what the skill is; none could say who it was for; all three named the same jargon ("Traversal plan", "Mode Autonomous", "Re-opens", "Anchor ledger", "Measure", "NO FIXED ROUNDS. NO EARLY FINISH.", "Get the skill" with no target).
+- Round 2 (two readers after the first fixes): the audience was still unclear on the phone; "Autonomous", "Install", "Revisits", "ADAPT, SCRAP or OVERRULE" and "the object" still confused.
+- Round 3 (two readers after the second fixes): desktop reader named who it was for and what to click first; phone reader named the audience from the hero, and could describe the deliverables.
+- Round 4 (after the last label fixes): the labels that remained were "Trade-off", "Reconsiders", "Next up", "Resolved", "Mode stated", and the diagram verbs. These were changed in the final pass. A reader has not re-checked after that pass.
+
+Remaining known gap: the install step does not say what happens after clicking "Install the skill"; the install steps sit below the fold.
