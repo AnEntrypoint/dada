@@ -310,3 +310,20 @@ Counts: 302 nodes, 218 judged in this run, 84 visited in an earlier run.
 | 331 | `nietzsche` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
 | 332 | `gombrich` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
 | 333 | `poetics` | autonomy | IN-LOG | visited in DESIGN-LOG; not re-judged this run |
+
+## WHOLE round R2 (required critics, final state of the hero copy)
+
+Ten seats, one author each: Wölfflin, Gombrich (Apollonian Order); Nietzsche, Venturi (Dionysian Excess); Shklovsky, Marinetti (Rupture); Ortega y Gasset, Sontag (Detachment); Cheryl D. Miller, Kelly Walters (Erasure). Screenshots: final state at 1440x1000 and 390x844.
+
+Result: **10 of 10 OBJECT, 0 PASS.** S2 (a WHOLE round with PASS from every required critic) is not met.
+
+| Objection | Seats | Decision |
+|---|---|---|
+| Sculpture cut at the right edge at 1440 ("MAK", "BREA") | Wölfflin, Gombrich, Shklovsky, Marinetti | OVERRULE. The cut is the designed bleed, printed as "UP TO 23%". Re-measured this run: 22.89% at 390, 22.90% at 900, 22.97% at 1001, 22.95% at 1440. Closing it scales the sculpture down about 23% (1341px to about 1033px at 1440) and rewrites the printed figure. The overrule trades that cost, not the critics' premise, and the objection stays open. |
+| Sculpture below the fold at 390 | Nietzsche, Shklovsky, Venturi | OVERRULE for now. Moving the object above the headline puts the type below the fold; the phone fold is the one place the two currently separate. Logged as an open trade. |
+| Photograph versus flat type | Ortega, Marinetti (free words) | OVERRULE. The photograph is the Breaker object; flattening it removes the object the headline names. Free typesetting of BREAK and REMAKE is a different move and is not taken in this run. |
+| Hero copy explains the object | Sontag | ADAPT, done: hero paragraph cut from 28 words to 10 ("DADA turns your brief into ambitious design, checked by independent critics."). Battery clean; motion-safety `total:0` at 1440, 1000 and 390. |
+| No credited maker or precedent above the fold | Miller, Walters | OPEN. A credit line would be new copy naming practitioners; not yet decided. |
+| Horizontal scrollbar | (Gombrich, earlier rounds) | REFUSED by measurement: scrollX stays 0 after a 500px scroll at 1440 and 390; scrollWidth equals clientWidth. |
+
+Open after R2: the sculpture's cut and phone fold (overruled with cost, objection stands), the credit line, and the Holmes seat (refused as unidentified, stays open per the record's rule). S1, S2, S3 and S4 are not met.
