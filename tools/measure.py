@@ -17,6 +17,12 @@ in a temp dir, so the published files are never edited to take a measurement.
 
 The snippet runs with (doc, win, W, H) in scope. Return anything
 JSON-serialisable, or a string for raw output.
+
+Two readings that cost a round to learn: `--fold N` is the *iframe height*,
+so it is the viewport `win.innerHeight` sees — omit it and every width reports
+3,000px tall, and any "above the fold" figure is fiction. And the `contrast`
+preset's `n` is the number of **failing** rows, so `n:0` with an empty `fails`
+is a clean run, not an unrun one.
 """
 
 import argparse
