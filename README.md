@@ -6,17 +6,17 @@ The original anchor catalog and graph structure live in a linked reference. DADA
 
 ## Install
 
-This repository includes `.agents/skills/dada`, a relative link to `skills/dada`, for workspace discovery. After opening this project, the skill is available on the next turn.
-
-For installation across projects, copy `skills/dada` into your agent’s skills directory, for example:
+Install with the skills CLI from any project folder:
 
 ```sh
-git clone https://github.com/AnEntrypoint/dada.git
-mkdir -p ~/.agents/skills
-cp -R dada/skills/dada ~/.agents/skills/dada
+npx skills add AnEntrypoint/dada -s dada
 ```
 
-For Codex, `~/.codex/skills/dada` is also supported. Preserve any existing installation before replacing it.
+The CLI detects your agent, copies the `dada` skill into its skills folder, and records it in `skills-lock.json`. Use `npx skills list` to confirm the install.
+
+This repository also includes `.agents/skills/dada`, a relative link to `skills/dada`, for workspace discovery. After opening this project, the skill is available on the next turn.
+
+To copy the skill by hand instead, copy `skills/dada` into your agent’s skills directory, for example `~/.agents/skills/dada`, or `~/.codex/skills/dada` for Codex. Preserve any existing installation before replacing it.
 
 ## Use
 
