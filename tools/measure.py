@@ -14,15 +14,19 @@ in a temp dir, so the published files are never edited to take a measurement.
     python3 tools/measure.py --shot /tmp/fold.png --widths 1440 --fold 900
     python3 tools/measure.py --shot /tmp/no-h1.png --widths 1440 --fold 900 \
             --expr 'doc.querySelector(".hero h1").style.visibility="hidden"'
+    python3 tools/measure.py --preset contrast --widths 390 --tab ideas
 
 The snippet runs with (doc, win, W, H) in scope. Return anything
 JSON-serialisable, or a string for raw output.
 
-Two readings that cost a round to learn: `--fold N` is the *iframe height*,
+Three readings that cost a round to learn: `--fold N` is the *iframe height*,
 so it is the viewport `win.innerHeight` sees — omit it and every width reports
 3,000px tall, and any "above the fold" figure is fiction. And the `contrast`
 preset's `n` is the number of **failing** rows, so `n:0` with an empty `fails`
-is a clean run, not an unrun one.
+is a clean run, not an unrun one. And the case panels are hidden unless their
+tab is chosen, so anything inside one — `.graph-art`, `.critique-art` —
+measures 0×0 with no error to warn you: pass `--tab ideas` (or `brief`, `make`,
+`critique`, `refine`) and the tab is clicked before the snippet runs.
 """
 
 import argparse
@@ -205,6 +209,14 @@ PRESETS = {
 }
 ALL = ['overflow', 'targets', 'bands', 'contrast', 'structure', 'state']
 
+# The case panels are hidden unless their tab is chosen, so a rect taken inside
+# one reads 0x0. Clicking the tab first is the whole of the fix.
+TAB_PRELUDE = (
+    "(function(){var _n=%s;"
+    "var _t=doc.getElementById('step-'+_n)||doc.querySelector('[data-step=\"'+_n+'\"]')"
+    "||doc.querySelector(_n);"
+    "if(_t)_t.click();})();\n")
+
 
 def stage(v=None, nojs=False):
     """Copy web/ to a temp dir with a fresh cache-bust token. Never edits web/.
@@ -289,6 +301,9 @@ def main():
     ap.add_argument('--delay', type=int, default=2500)
     ap.add_argument('--shot', metavar='OUT.png', help='screenshot at the first width instead of measuring')
     ap.add_argument('--raw', action='store_true', help='print raw strings, not JSON')
+    ap.add_argument('--tab', metavar='STEP',
+                    help='click this case-study tab before measuring (brief, ideas, make, '
+                         'critique, refine, or a selector) — panels are hidden otherwise')
     a = ap.parse_args()
 
     if a.file:
@@ -324,6 +339,8 @@ def main():
             print('=== %d ===' % w)
             for name in names:
                 c = code if code is not None else PRESETS[name]
+                if a.tab:
+                    c = TAB_PRELUDE % json.dumps(a.tab) + c
                 dump, err = render(probe, os.path.join(site, 'index.html'), c,
                                    w, height, a.delay, a.nojs,
                                    extra=os.environ.get('CHROME_ARGS', '').split())
