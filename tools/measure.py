@@ -26,6 +26,20 @@ preset's `n` is the number of **failing** rows, so `n:0` with an empty `fails`
 is a clean run, not an unrun one. And the `state` preset drives the install
 section's copy buttons, not a tab strip: it reports how many of them are still
 `hidden` once the script has run, so `hidden:0` is both buttons revealed.
+
+`--preset cross` answers the question this page keeps being asked: while the
+sculpture descends, is any word read against it? It pauses every animation on
+the page and drives them all to the same instant of the fall, then composites
+the artwork's own pixels over the hero gradient under each visible word and
+takes the contrast against that word's own colour, at 41 instants. `total` is
+the count of instants at which a visible word sat below 4.5:1, so `total:0` is
+clean; `firstVisible` is the fraction of the fall at which a word's beat let it
+in, and `crossed` is the px of the artwork's ink under it.
+
+Reduced motion is a Chromium switch, not a snippet — nothing in the page can
+turn the media query on, so set it in the launch:
+`CHROME_ARGS=--force-prefers-reduced-motion python3 tools/measure.py ...`
+Extra flags from `CHROME_ARGS` are appended to the browser command line.
 """
 
 import argparse
@@ -84,6 +98,93 @@ const over=[...doc.querySelectorAll('*')].filter(el=>{
   return r.width>0 && (r.right>W+1||r.left<-1);
 }).slice(0,6).map(el=>el.tagName.toLowerCase()+(el.className&&typeof el.className==='string'?'.'+el.className.split(/\s+/)[0]:'')+'@'+Math.round(el.getBoundingClientRect().right));
 return {w:W, scroll:de.scrollWidth, client:de.clientWidth, ovf:de.scrollWidth-de.clientWidth, past:over};
+"""
+
+P_CROSS = r"""
+// What the object crosses, and whether a word is ever read against it.
+// Every animation on the page is paused and driven to the same instant, so
+// the sculpture's place and each word's beat are sampled together. The ink
+// under a visible word is composited over the hero's own gradient and its
+// contrast taken against the word's own colour, pixel by pixel.
+var STEPS = 41, STRIDE = 2, FLOOR = 4.5;
+var BG0 = [247, 244, 238], BG1 = [238, 233, 220];   // .hero, 180deg
+function lin(c){c/=255;return c<=0.03928?c/12.92:Math.pow((c+0.055)/1.055,2.4);}
+function lum(c){return 0.2126*lin(c[0])+0.7152*lin(c[1])+0.0722*lin(c[2]);}
+function ratio(a,b){var l1=lum(a),l2=lum(b);return (Math.max(l1,l2)+0.05)/(Math.min(l1,l2)+0.05);}
+function rgb(s){var m=(s||'').match(/(\d+(?:\.\d+)?)/g);return m?[+m[0],+m[1],+m[2]]:[0,0,0];}
+function bgAt(y,hr){var t=(y-hr.top)/(hr.height||1);t=t<0?0:t>1?1:t;
+  return [0,1,2].map(function(i){return BG0[i]+(BG1[i]-BG0[i])*t;});}
+
+var hero=doc.querySelector('.hero'), img=doc.querySelector('.hero-art img');
+var all=doc.getAnimations?doc.getAnimations():[];
+all.forEach(function(a){a.pause();});
+var sink=(img.getAnimations?img.getAnimations():[])[0];
+var dur=sink?sink.effect.getTiming().duration:0;
+if(!dur) return {w:W, error:'no animation on .hero-art img'};
+
+var ir=img.getBoundingClientRect();
+var bw=Math.max(1,Math.round(ir.width)), bh=Math.max(1,Math.round(ir.height));
+var cv=doc.createElement('canvas'); cv.width=bw; cv.height=bh;
+var cx=cv.getContext('2d');
+try{ cx.drawImage(img,0,0,bw,bh); }catch(e){ return {w:W, error:'draw: '+e.message}; }
+var px=null;
+try{ px=cx.getImageData(0,0,bw,bh).data; }catch(e){ return {w:W, error:'tainted: '+e.message}; }
+
+var WORDS=[['.hero-bottom span:nth-child(1)','strip#1'],
+           ['.hero-bottom span:nth-child(2)','strip#2'],
+           ['.hero-description','description'],
+           ['.build-chip','chip'],
+           ['.hero .text-action','cta'],
+           ['.hero h1','headline'],
+           ['.hero-art figcaption span','caption']];
+var els=WORDS.map(function(p){return {n:p[1], el:doc.querySelector(p[0])};})
+             .filter(function(o){return o.el;});
+els.forEach(function(o){o.color=rgb(win.getComputedStyle(o.el).color);});
+
+var res=els.map(function(o){return {n:o.n, firstVisible:null, crossed:0,
+                                    worst:99, worstU:null,
+                                    visWorst:99, visWorstU:null, visBad:0};});
+var violations=[];
+for(var s=0;s<STEPS;s++){
+  var u=s/(STEPS-1), t=u*dur;
+  all.forEach(function(a){try{a.currentTime=t;}catch(e){}});
+  var hr=hero.getBoundingClientRect(), r=img.getBoundingClientRect();
+  els.forEach(function(o,k){
+    var op=parseFloat(win.getComputedStyle(o.el).opacity);
+    var vis=op>0.5;
+    if(vis && res[k].firstVisible===null) res[k].firstVisible=+u.toFixed(3);
+    var b=o.el.getBoundingClientRect();
+    if(b.width<=0||b.height<=0) return;
+    var x0=Math.max(b.left,r.left), x1=Math.min(b.right,r.right);
+    var y0=Math.max(b.top,r.top),  y1=Math.min(b.bottom,r.bottom);
+    if(x1<=x0||y1<=y0) return;
+    for(var y=y0;y<y1;y+=STRIDE){
+      var bg=bgAt(y,hr);
+      for(var x=x0;x<x1;x+=STRIDE){
+        var cxi=Math.round(x-r.left), cyi=Math.round(y-r.top);
+        if(cxi<0||cyi<0||cxi>=bw||cyi>=bh) continue;
+        var o4=(cyi*bw+cxi)*4, a=px[o4+3]/255;
+        if(a<0.06) continue;
+        res[k].crossed+=STRIDE*STRIDE;
+        var over=[0,1,2].map(function(i){return px[o4+i]*a+bg[i]*(1-a);});
+        var rr=ratio(o.color,over);
+        if(rr<res[k].worst){res[k].worst=rr;res[k].worstU=+u.toFixed(3);}
+        if(!vis) continue;
+        if(rr<res[k].visWorst){res[k].visWorst=rr;res[k].visWorstU=+u.toFixed(3);}
+        if(rr<FLOOR) res[k].visBad+=STRIDE*STRIDE;
+      }
+    }
+    if(res[k].visBad>0 && res[k].visWorstU===+u.toFixed(3))
+      violations.push({n:o.n, u:+u.toFixed(3), ratio:+res[k].visWorst.toFixed(2)});
+  });
+}
+els.forEach(function(o,k){
+  res[k].worst=+res[k].worst.toFixed(2);
+  res[k].visWorst=+res[k].visWorst.toFixed(2);
+});
+return {w:W, dur:dur, steps:STEPS, stride:STRIDE, floor:FLOOR,
+        words:res, violations:violations,
+        total:violations.reduce(function(a,v){return a+1;},0)};
 """
 
 P_TARGETS = r"""
@@ -199,8 +300,9 @@ PRESETS = {
     'contrast': P_CONTRAST,
     'structure': P_STRUCTURE,
     'state': P_STATE,
+    'cross': P_CROSS,
 }
-ALL = ['overflow', 'targets', 'bands', 'contrast', 'structure', 'state']
+ALL = ['overflow', 'targets', 'bands', 'contrast', 'structure', 'state', 'cross']
 
 # The case panels are hidden unless their tab is chosen, so a rect taken inside
 # one reads 0x0. Clicking the tab first is the whole of the fix.
