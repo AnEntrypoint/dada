@@ -113,3 +113,52 @@ Holmes, Nielsen, Yablonski, Beier, Cairo, Gestalt, Wheeler all arrived because
 a move or an objection needed them. The seed is a starting point. Enroll an
 anchor only when it does work in a record's argument or in a critic's
 observation, and give it a ledger row when you do.
+
+## 9. Measure the rendered artifact, not the source that produced it
+
+From the Microcontroller Encyclopedia run (2026-10-27). A build script reported
+40 tagged pin rows; the DOM had 0. The script had replaced a `<table>` with its
+`<tr>`s, so the parser discarded every row, and my own verification counted the
+file instead of the browser. The same failure shape appeared earlier on the
+portfolio run, where five critics reported a phone-header collision that existed
+only in the capture.
+
+The rule: before tabling any premise for the panel, take the number from the
+rendered artifact — `getComputedStyle`, `getBoundingClientRect`,
+`querySelectorAll`, `scrollWidth`. A build log, a commit message and a file
+listing are all claims about the source; they are not evidence about the work.
+When the two disagree, the browser is right and the script is wrong.
+
+Three concrete traps this run paid for:
+
+- A `<tr>` written outside `<table>` is dropped by the HTML parser with no
+  error. Splice tables with a capturing `re.split` that keeps the wrapper.
+- Rows whose first cell is a `<th>` vanish if you strip `<th>` before counting
+  (a 40-pin board counted as 39). Read cells from `th` and `td` alike.
+- `position: sticky` inside the header unsticks when the header leaves the
+  viewport; the sticky element has to be a sibling of the scrolling content.
+- A relative `src` or `href` on a page in a subdirectory resolves against that
+  subdirectory. Subdirectory pages need `../`.
+
+**Graph amendment:** add a node "Measure the rendered artifact" to the Panel
+Method cluster with the edge
+`c_genchi -->|verify the DOM against the source before tabling a premise for| CRITICS`.
+
+## 10. An Andon about missing facts is answered by sourcing, not by styling
+
+Debord pulled the Andon on a board portrait: a site that stated no millimetre
+could not honestly depict a board at scale. The premise was measured (0 hits for
+`mm`) and true, so the resolution was ADAPT — footprints quoted from the
+manufacturers' own pages, and, where none could be sourced, the page printing
+"footprint: not stated" with the drawing labelled schematic. Inventing plausible
+dimensions would have been the easier move and the wrong one. When an objection
+is about the artifact's *evidence*, the fix is evidence; a style change is a
+refusal wearing paint.
+
+## 11. Give a generated graphic a fixed box, or the data sets the layout
+
+Every board drawing letterboxes inside one 300px square. Before that, the
+21 × 51 mm Pico rendered 532px tall because the drawing was sized by the data —
+a portrait of a tall object is tall. If art is generated from measurements,
+constrain the frame and let the drawing fit it; otherwise the subject's
+proportions quietly redesign the page.
