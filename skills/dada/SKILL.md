@@ -58,7 +58,9 @@ Check your tool list, and any tool-search or registry facility you have, for too
 | Render and navigate the anchor graph | A Mermaid or diagram renderer, visualizer, graph database or knowledge-graph tool; a Mermaid parser to validate | Mermaid text in `DESIGN-LOG.md` |
 | Compute the Frontier | A graph query for unvisited in- and out-neighbours of visited nodes | Read the edge lines of the graph and list them by hand |
 | Track workflow state | A todo, plan, task-list or workflow-engine tool: one task per Frontier candidate taken and per panel round | A checklist in `DESIGN-LOG.md` |
-| Run the panel | A sub-agent, task or parallel-agent tool: one agent per literary reference (see Step 2c) | Sequential, written one reference at a time |
+| Run the panel | A sub-agent, task or parallel-agent tool: one agent per literary reference (see Step 2c), **launched at most three at a time, each filing its verdict to a panel directory** | Sequential, written one reference at a time |
+| Collect panel reports | A panel directory on disk plus `scripts/collect_panel.py`, listing which seats reported | List the panel directory by hand |
+| Measure the artifact | A render-and-inspect tool (headless browser, pixel sampling, link fetch) driven by a seat or by a script | Quote the numbers you can compute by hand |
 | Persist the log | A docs, notes or artifact tool, in addition to `DESIGN-LOG.md` | `DESIGN-LOG.md` only |
 
 Record in the Traversal Plan which tool you used for each job, or "none available". Do not invent tools, and do not claim a tool was used unless you called it.
@@ -100,6 +102,8 @@ Mode field: Reception dial (Autonomous) | Advanced pole and Acceptable pole (Ada
 - Evidence rule: every critic must point to something observable in the artifact and name one literature anchor that grounds the judgment. A critic that cites only the plan is invalid; redo it.
 - Run the Critical Response Process in this order: (1) statements of meaning, what the work seems to say; (2) artist questions; (3) neutral questions from critics; (4) opinions, only after the artist permits them.
 - Any critic may pull the Andon. Stop making new moves until its objection is resolved.
+- **Measurement (see [the field notes](references/field-notes.md), §2).** The panel does not measure by default. Where the artifact can be inspected, convene `Critic: Evidence (Cairo)` as a seat briefed to *run measurements* — contrast over images, focus visibility, overflow, target size, link inventory — rather than to read screenshots, and give `Critic: Inclusion (Mace)` a named focus-visibility check. A finding that appears only in a tool's output is measured on the rendered page before a move is spent on it.
+- **Durability (see [the panel protocol](references/panel-protocol.md)).** Run the panel so a transport failure cannot take a verdict with it. Make a panel directory for the round; instruct every seat to write its report to `<panel_dir>/<seat>.md` as its last action and to return the same text; launch at most three seats at a time; keep each seat prompt under about 350 words; check for an existing file before re-running a seat that appeared to fail; bound retries at three per seat; collect from the directory before writing the Panel Report. **A verdict is a file, not a return value.** A required seat whose file never appears is recorded as `NOT REPORTED (3 attempts, transport failure)` — never as PASS, never reconstructed from memory — and its absence leaves the run incomplete.
 
 Panel Report format:
 
@@ -177,6 +181,7 @@ Then close:
 - A quick mental check or a one-line "I considered X" is not a panel.
 - Naming an anchor is not using it: it must appear in a record's argument or in a critic's observation, tied to something in the work.
 - Not looking for graph or workflow tooling is not the same as none being available.
+- A seat that returned "failed" may still have filed its verdict: check the panel directory before spending the seat again. Filling a missing verdict from what you think that authority would have said is a fabricated panel.
 - Short on effort is not an exemption. If an external limit forces a stop, write the Open frontier and say the run is incomplete; do not claim the stop conditions held.
 
 ## Reading the graph
